@@ -6,11 +6,11 @@
  *
  *
  ********************************/
-export default class bash_pwa{
-    constructor(){
+export default class bash_pwa {
+    constructor() {
         //TODO Alle möglichen Properties.
         // this.model = new bash_model();
-        // this.api = new api)(;
+        // this.api = new api();
         window.bash = this;
     }
 }
