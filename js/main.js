@@ -1,5 +1,5 @@
 //Gemeinsam: IMPORT
 "use strict";
-import Bash_PWA from './bash/bash-pwa';
+import Bash_PWA from './bash/bash-pwa.js';
 
-const Bash_PWA = new Bash_PWA();
+const Bash = new Bash_PWA();
