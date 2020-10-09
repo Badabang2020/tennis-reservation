@@ -1,6 +1,6 @@
 "use strict";
 
-export default class bash_model {
+export default class bashModel {
     constructor() {
 
     }
