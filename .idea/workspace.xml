@@ -17,7 +17,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php_intro" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -29,5 +29,11 @@
       <updated>1602228225651</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1500" y="455" key="FileChooserDialogImpl" timestamp="1602229022091">
+      <screen x="-2560" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-1500" y="455" key="FileChooserDialogImpl/0.0.1920.1040/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1602229022091" />
   </component>
 </project>
