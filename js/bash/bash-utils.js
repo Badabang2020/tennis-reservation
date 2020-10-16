@@ -52,7 +52,7 @@ class Bash_Utils{
     };
 
     deleteCookie(name){
-        window.Bash.utils.setCookie(name,"",-1);
+        window.bash.utils.setCookie(name,"",-1);
     };
 
     monthOfDay(day){
