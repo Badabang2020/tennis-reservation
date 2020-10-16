@@ -31,7 +31,7 @@ export default class Bash_Route{
         //Diese Funktion überprüft zuerst, ob ein Fragezeichen in der URL ist, und vergleicht dann
         //entsprechend den ausgelesenen Slug der URL mit dem Slug der View.
         //Stimmen die Slugs überein, so ist diese Route dran. Return True.
-        if(window.Bash.utils.isEmpty(Bash_Route.getGetParameters()))
+        if(window.bash.utils.isEmpty(Bash_Route.getGetParameters()))
             return (window.location.hash.substr(1).replace('#','') === this.slug);
         else{
             let index = window.location.hash.substr(1).indexOf("?");
@@ -54,13 +54,12 @@ export default class Bash_Route{
         //Holt sich mit $.get() die Datei und spielt den Inhalt der Datei in app.innerHTML aus.
         //Feuert anschließend das Event "templateChanged" mit dem Slug als Detail ab.
         let slug = this.slug;
-        $.get(window.Bash.system.webRoot + window.Bash.system.templatesPath +"/"+this.template+".tpl", function(tpl){
+        $.get(window.bash.system.webRoot + window.bash.system.templatesPath +"/"+this.template+".tpl", function(tpl){
             app.innerHTML = tpl;
             window.dispatchEvent(new CustomEvent("templateChanged", {detail: {slug: slug}}));
         });
     }
 
-    //TODO: EXPLAIN
     static getGetParameters() {
         let index = window.location.hash.substr(1).indexOf("?");
         if (index != -1) {
