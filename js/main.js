@@ -9,7 +9,6 @@ import michaelW from "./views/view.michaelW.js";
 let routes = [
     new MainMenuView("/", "mainmenu"),
     new LoginView("/login", "login"),
-    new michaelW("/michaelw", "michaelW")
 ];
 
 const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes);
