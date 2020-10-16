@@ -31,11 +31,12 @@ export default class Bash_Route{
         //Diese Funktion überprüft zuerst, ob ein Fragezeichen in der URL ist, und vergleicht dann
         //entsprechend den ausgelesenen Slug der URL mit dem Slug der View.
         //Stimmen die Slugs überein, so ist diese Route dran. Return True.
-        let index = window.location.hash.substr(1).indexOf("?");
-        if(index)
-            return(window.location.hash.substr(1,index).replace("#","") === this.slug);
-        else
-            return (window.location.hash.substr(1).replace("#", "") === this.slug);
+        if(window.Bash.utils.isEmpty(Bash_Route.getGetParameters()))
+            return (window.location.hash.substr(1).replace('#','') === this.slug);
+        else{
+            let index = window.location.hash.substr(1).indexOf("?");
+            return (window.location.hash.substr(1,index).replace("#","") === this.slug);
+        }
     }
 
     renderMarkup(){
@@ -47,6 +48,7 @@ export default class Bash_Route{
             this.tpl();
     }
 
+    //TODO: Template-Engine
     tpl(){
 
         //Holt sich mit $.get() die Datei und spielt den Inhalt der Datei in app.innerHTML aus.
@@ -56,5 +58,20 @@ export default class Bash_Route{
             app.innerHTML = tpl;
             window.dispatchEvent(new CustomEvent("templateChanged", {detail: {slug: slug}}));
         });
+    }
+
+    //TODO: EXPLAIN
+    static getGetParameters() {
+        let index = window.location.hash.substr(1).indexOf("?");
+        if (index != -1) {
+            let parameters = window.location.hash.substr(index+2);
+            let result = parameters.split('&').reduce(function (result, item) {
+                let parts = item.split('=');
+                result[parts[0]] = parts[1];
+                return result;
+            }, {});
+            return(result);
+        } else
+            return {};
     }
 }

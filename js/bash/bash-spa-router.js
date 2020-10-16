@@ -33,10 +33,13 @@ export default  class Bash_SPA_Router{
                     return;
                 }
             }
-            //Es wurde keine passende Route gefunden, es ist aber auch nicht die startseite. ergo 404
-            console.error("I have no idea where "+window.location.hash+" should be, but here, taste some 404 page!");
-            window.location.hash = this.route404.slug;
-            this.goToRoute(this.route404);
+            if(this.route404)
+                window.location.hash = this.route404.slug;
+            else{
+                //Es wurde keine passende Route gefunden, es ist aber auch nicht die startseite. ergo 404
+                console.log("I have no Idea where "+window.location.hash+" should be, but hey - taste some startpage!");
+                window.location.hash = this.homeRoute.slug;
+            }
         } else{
             //Wenn nicht, dann lade Startseite.
             window.location.hash = this.homeRoute.slug; //Startseite wird geladen
