@@ -3,14 +3,25 @@
 import Bash_PWA from './bash/bash-pwa.js';
 import LoginView from "./views/view.login.js";
 import MainMenuView from "./views/view.mainmenu.js";
+<<<<<<< HEAD
 import michaelW from "./views/view.michaelW.js";
+=======
+import BenView from "./views/view.ben.js";
+>>>>>>> 25245d8a74d5e387ed6c25f0fa5615edd3f35215
 
 //Routen-Array anlegen
 let routes = [
     new MainMenuView("/", "mainmenu"),
     new LoginView("/login", "login"),
+<<<<<<< HEAD
     new michaelW("/michaelw", "michaelW")
 ];
 
 const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes);
+=======
+    new BenView("/ben", "ben")
+];
+
+const Bash = new Bash_PWA("http://127.0.0.1/tennis/", "templates", routes);
+>>>>>>> 25245d8a74d5e387ed6c25f0fa5615edd3f35215
 // const Bash = new Bash_PWA("http://p452177.mittwaldserver.info/platzreservierung/", "templates", routes);
