@@ -2,56 +2,56 @@
 * Styling the login window
 *****************************************************/
 
-.login{
-    max-width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    
+.login {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.login img{
-    width: 100%;
-    object-fit: contain;
-    padding-right: 20px;
+.login img {
+  width: 100%;
+  object-fit: contain;
+  padding-right: 20px;
 }
-.left-image{
-    width: 30%;
-}
-
-.right-section{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-
+.left-image {
+  width: 30%;
 }
 
-.right-section .row{
-    flex:1;
+.right-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
-.right-section .row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
+.right-section .row {
+  flex: 1;
 }
 
-.right-section .row-right{
-    display: flex;
-    justify-content: flex-end;
+.right-section .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
-.right-section #password{
-    flex: 1;
+.right-section .row-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.right-section #username{
-    flex: 1;
+.right-section #password {
+  flex: 1;
 }
 
-
-.right-section .row-right button{
-    padding-left: 10px;
+.right-section #username {
+  flex: 1;
 }
 
+.right-section .row-right button {
+  padding-left: 10px;
+}
+
+/*****************************************************
+* Styling the Register window
+*****************************************************/
