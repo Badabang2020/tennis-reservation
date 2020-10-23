@@ -10,6 +10,7 @@ import MichaelBView from './views/view.michaelB.js';
 import michaelW from './views/view.michaelW.js';
 import RaphaelView from './views/view.raphael.js';
 import SebastianView from './views/view.sebastian.js';
+import SettingsView from './views/view.settings.js';
 
 //Routen-Array anlegen
 let routes = [
@@ -21,7 +22,8 @@ let routes = [
     new MichaelBView("/michaelb", "michaelb"),
     new michaelW("/michaelw", "michaelw"),
     new RaphaelView("/raphael", "raphael"),
-    new SebastianView("/sebastian", "sebastian")
+    new SebastianView("/sebastian", "sebastian"),
+    new SettingsView("/settings", "settings"),
 ];
 
 const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes);
