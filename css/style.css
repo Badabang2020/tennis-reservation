@@ -44,10 +44,12 @@
 
 .right-section #password{
     flex: 1;
+    margin-left: 10px;
 }
 
 .right-section #username{
     flex: 1;
+    margin-left: 10px;
 }
 
 
@@ -55,3 +57,6 @@
     padding-left: 10px;
 }
 
+#button-login-ok {
+    margin-right: 10px;
+}
