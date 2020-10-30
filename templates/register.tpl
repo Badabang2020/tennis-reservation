@@ -19,8 +19,8 @@
             <input type="text" id="streetName" name="streetName" placeholder="Musterstraße 5" required>
         </div>
         <div class="row">
-            <label for="streetName">Stadt:</label>
-            <input type="text" id="streetName" name="streetName" placeholder="Linz" required>
+            <label for="city">Stadt:</label>
+            <input type="text" id="city" name="city" placeholder="Linz" required>
         </div>
         <div class="row">
             <label for="postcode">PLZ:</label>
