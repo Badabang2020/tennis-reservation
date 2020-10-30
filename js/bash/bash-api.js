@@ -15,15 +15,6 @@ export default class API{
         API.request("Login", JSON.stringify(credentials), callback);
     }
 
-    registerClub(clubname, name, postcode, callback){
-        let club = {
-            clubname: clubname,
-            name: name,
-            postcode: postcode
-        };
-        API.request("RegisterClub", JSON.stringify(club), callback);
-    }
-
     static request(purpose, json, callback){
         $.ajax({
             url: "http://p452177.mittwaldserver.info/platzreservierung/api.php",

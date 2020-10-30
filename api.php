@@ -30,6 +30,7 @@ if(isset($_REQUEST["purpose"])){
             deleteCourt();
             break;
         default:
+            die("Nix!");
             break;
     }
 }
