@@ -1,8 +1,10 @@
 //Gemeinsam: IMPORT
 "use strict";
 import Bash_PWA from './bash/bash-pwa.js';
-import LoginView from "./views/view.login.js";
 import MainMenuView from "./views/view.mainmenu.js";
+import RegisterView from './views/view.register.js';
+import LoginView from "./views/view.login.js";
+
 import BenView from "./views/view.ben.js";
 import FabianView from './views/view.fabian.js';
 import MatthiasView from './views/view.matthias.js';
@@ -15,7 +17,9 @@ import SettingsView from './views/view.settings.js';
 //Routen-Array anlegen
 let routes = [
     new MainMenuView("/", "mainmenu"),
+    new RegisterView("/register", "register"),
     new LoginView("/login", "login"),
+    
     new BenView("/ben", "ben"),
     new FabianView("/fabian", "fabian"),
     new MatthiasView("/matthias", "matthias"),
