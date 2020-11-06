@@ -1,7 +1,7 @@
 <div id="mainmenu">
     <div class="header">
-        <h1>Welcome to tennis-reservation</h1>
-        <h3>Your favourite tennis-reservation-program</h3>
+        <h1><%>mainHeader<%></h1>
+        <h3><%>headerDesc<%></h3>
     </div>
     <div class="maincontent">
         <article>
@@ -12,16 +12,5 @@
             </p>
         </article>
     </div>
-    <!--
-    <ul>
-        <li data-slug="raphael">Raphael</li>
-        <li data-slug="ben">Ben</li>
-        <li data-slug="sebastian">Sebastian</li>
-        <li data-slug="michaelw">MichaelW</li>
-        <li data-slug="michaelb">MichaelB</li>
-        <li data-slug="matthias">Matthias</li>
-        <li data-slug="fabian">Fabian</li>
-    </ul>
--->
     <button id="logout">LOGOUT</button>
 </div>

@@ -18,6 +18,11 @@ export default class Bash_Translator{
 
 let Bash_Language = {};
 Bash_Language.en = {
+
+    //Main
+    mainHeader: "Welcome to tennis-reservation",
+    headerDesc: "Your favourite tennis-reservation-program",
+
     //Settings
     language: "Language",
     german: "German",
@@ -35,6 +40,10 @@ Bash_Language.en = {
     court: "Court",
 };
 Bash_Language.de = {
+    //Main
+    mainHeader: "Willkommen zur Tennis-Reservierung",
+    headerDesc: "Deine beste Tennisplatz-Reservierungs Seite",
+
     //Settings
     language: "Sprache",
     german: "Deutsch",
