@@ -33,14 +33,16 @@ Bash_Language.en = {
     login: "Login",
 
     //Register
-    street: "street",
-    city: "city",
-    postcode: "postcode",
-    firstName: "firstname",
-    lastName: "lastname",
-    email: "email",
+    address: "Address",
+    street: "Street",
+    city: "City",
+    postcode: "Postcode",
+    contact: "Contact person",
+    firstName: "Firstname",
+    lastName: "Lastname",
+    email: "Email",
     password2: "Repeat password",
-    register: "register",
+    register: "Register",
 
 
     //General
@@ -64,9 +66,11 @@ Bash_Language.de = {
     login: "Einloggen",
 
     //Register
+    address: "Adresse",
     street: "Straße",
     city: "Stadt",
     postcode: "PLZ",
+    contact: "Kontaktperson",
     firstName: "Vorname",
     lastName: "Nachname",
     email: "E-mail",

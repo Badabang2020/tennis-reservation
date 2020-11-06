@@ -25,7 +25,7 @@ export default class bash_pwa {
         this.system = {
             webRoot : webRoot,
             templatesPath : templatesPath,
-            defaultLanguage : "de",
+            defaultLanguage : "en",
             debugmode : true
         };
         this.translator = new Bash_Translator(...languages);
