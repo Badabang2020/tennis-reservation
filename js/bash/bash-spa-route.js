@@ -48,14 +48,28 @@ export default class Bash_Route{
             this.tpl();
     }
 
-    //TODO: Template-Engine
     tpl(){
-
         //Holt sich mit $.get() die Datei und spielt den Inhalt der Datei in app.innerHTML aus.
         //Feuert anschließend das Event "templateChanged" mit dem Slug als Detail ab.
         let slug = this.slug;
         $.get(window.bash.system.webRoot + window.bash.system.templatesPath +"/"+this.template+".tpl", function(tpl){
-            app.innerHTML = tpl;
+            let markup = tpl,
+                open = /<%>/gi,
+                result,
+                indices_open = [],
+                indices_close = [],
+                even = true; //if even = true: the next <%> Tag opens.
+            //Jedes mal, wenn in tpl die Zeichenkette <%> gefunden wird, gehen wir in die While-Schleife.
+            //Solange, bis keines mehr gefunden wird.
+            while ((result = open.exec(tpl))){
+                even ? indices_open.push(result.index) : indices_close.push(result.index);
+                even = !even;
+            }
+            for(let i = 0; i < indices_close.length; i++){
+                let word = window.bash.t(tpl.substring(indices_open[i]+3, indices_close[i]));
+                markup = markup.replace(tpl.substring(indices_open[i], indices_close[i]+3), word);
+            }
+            app.innerHTML = markup;
             window.dispatchEvent(new CustomEvent("templateChanged", {detail: {slug: slug}}));
         });
     }

@@ -26,5 +26,5 @@ let routes = [
     new SettingsView("/settings", "settings"),
 ];
 
-const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes);
+const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes, "de", "en");
 // const Bash = new Bash_PWA("http://p452177.mittwaldserver.info/platzreservierung/", "templates", routes);

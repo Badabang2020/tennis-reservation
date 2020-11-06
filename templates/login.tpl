@@ -4,16 +4,16 @@
     </div>
     <div class="right-section">
         <div class="row">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="username">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="email">
         </div>
         <div class="row">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="username" placeholder="*******">
+            <label for="password"><%>password<%></label>
+            <input type="password" id="password" name="password" placeholder="*******">
         </div>
         <div class="row row-right">
-            <button  id="button-login-ok" name="login">Login</button>
-            <button  id="button-login-cancel" name="cancel">Cancel</button>
+            <button  id="button-login-ok" name="login"><%>login<%></button>
+            <button  id="button-login-cancel" name="cancel"><%>cancel<%></button>
         </div>
     </div>
 </div>
