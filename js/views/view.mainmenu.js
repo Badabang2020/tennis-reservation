@@ -8,13 +8,13 @@ export default class MainMenuView extends Bash_Route{
 
     //OVERWRITE
     init(){
-        $("#logout").unbind("click").on("click", function(){
-           window.bash.utils.deleteCookie("user");
-           window.location.hash = "/login";
-        });
-
-        $("li").unbind("click").on("click",function(){
-            window.location.hash = "/"+$(this).data("slug");
-        });
+        if(!window.bash.utils.getCookie("user")) {
+            window.location.hash = "/login";
+        } else {
+            $("#logout").unbind("click").on("click", function(){
+               window.bash.utils.deleteCookie("user");
+               window.location.hash = "/login";
+            });
+        }
     }
 }

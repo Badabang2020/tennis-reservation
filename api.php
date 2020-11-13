@@ -92,7 +92,7 @@ function login()
     if ($user->num_rows > 0)
         die(json_encode($user->fetch_assoc()));
     else
-        die(false);
+        die("noMatch");
 }
 
 // ---------------------------- Club Begin ----------------------------
