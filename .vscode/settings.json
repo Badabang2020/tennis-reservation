@@ -1,0 +1,14 @@
+{
+    "emmet.extensionsPath": "",
+    "less.compile": {
+        
+        "out": "${workspaceRoot}\\css\\"
+    },
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.preferences": {
+    
+    }
+}
