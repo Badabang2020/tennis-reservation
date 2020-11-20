@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 header {
   display: none;
 }
@@ -122,34 +121,3 @@ header {
   width: 695px;
   flex-grow: 0;
 }
-=======
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-
-body{
-    font-family: 'Balsamiq Sans', cursive;
-}
-
-.image{
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: center;
-}
-
-
-
-.login{
-    width: 20rem;
-    display: flex;
-    justify-content: center;
-}
-
-.login-section{
-    width: 100%;
-}
-
-input{
-    width: 100%;
-    height: 2rem;
-}
->>>>>>> develop
