@@ -10,7 +10,7 @@ export default class LoginView extends Bash_Route{
         console.log("THIS IS LOGIN!!");
         if(!window.bash.utils.getCookie("user")){
             $("#button-login-ok").unbind("click").on("click", function(){
-                let email = $("#username").val();
+                let email = $("#email").val();
                 let password = $("#password").val();
                 window.bash.api.login(email, password, function(mysqlResult){
                     console.log(mysqlResult);

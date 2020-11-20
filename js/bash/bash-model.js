@@ -6,7 +6,7 @@ export default class bashModel {
         this.members = undefined;
     }
 
-    getMembersOfClub(this.club.clubname, callback){
+    getMembersOfClub(callback){
         window.bash.api.getMembersOfClub(this.club, function(members){
             this.members = members;
             callback();
