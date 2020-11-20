@@ -6,27 +6,27 @@
 
   <h2>Your settings</h2>
   <form action="">
-    <label for="clubadmin__adress">Club Adress</label>
+    <label for="clubadmin__adress"><%>clubAddress<%></label>
     <input type="text" name = "club-adress" id="clubadmin__adress">
-    <label for="clubadmin__postalcode">Postal code</label>
+    <label for="clubadmin__postalcode"><%>postalCode<%></label>
     <input type="text" name = "club-postalcode" id="clubadmin__postalcode">
-    <label for="clubadmin__openinghoursfrom">Opening hours</label>
+    <label for="clubadmin__openinghoursfrom"><%>openingHours<%></label>
     <input type="time" name = "club-openinghoursfrom" id="clubadmin__openinghoursfrom"  min="09:00" max="18:00" required>
     <input type="time" name = "club-openinghoursto" id="clubadmin__openinghoursto" min="09:00" max="18:00" required>
-    <label for="clubadmin__hoursperweek">Hours per week</label>
+    <label for="clubadmin__hoursperweek"><%>hoursPerWeek<%></label>
     <input type="text" name = "club-hours-per-week" id="clubadmin__hoursperweek">
-    <label for="clubadmin__maxreservations">Max reservations</label>
+    <label for="clubadmin__maxreservations"><%>maxReservations<%></label>
     <input type="text" name = "club-max-reservations" id="clubadmin__maxreservations">
 
 
-    <h2>Your members</h2>
+    <h2><%>cYourMembers<%></h2>
     <table class="blueTable">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Adress</th>
-          <th>Actions</th>
+          <th><%>cName<%></th>
+          <th><%>cEmail<%></th>
+          <th><%>cAdress<%></th>
+          <th><%>cActions<%></th>
         </tr>
       </thead>
       <tbody>
@@ -35,22 +35,22 @@
         <td>cell2_1</td>
         <td>cell3_1</td>
         <td>
-          <button id="clubadmin__editmember">Edit</button>
-          <button id="clubadmin__deletemember">Delete</button>
+          <button id="clubadmin__editmember"><%>cEdit<%></button>
+          <button id="clubadmin__deletemember"><%>cDelete<%></button>
         </td>
         </tr>
       </tbody>
     </table>
-    <button id="clubadmin__addmember">Add member</button>
+    <button id="clubadmin__addmember"><%>cAddMember<%></button>
     
 
-    <h2>Your courts</h2>
+    <h2><%>cYourCourts<%></h2>
     <table class="blueTable">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Surface</th>
-          <th>Actions</th>
+          <th><%>cName<%></th>
+          <th><%>cSurface<%></th>
+          <th><%>cActions<%></th>
         </tr>
       </thead>
       <tbody>
@@ -59,15 +59,15 @@
         <td>cell2_1</td>
         <td>cell3_1</td>
         <td>
-          <button id="clubadmin__addcourt">Edit</button>
-          <button id="clubadmin__deletecourt">Delete</button>
+          <button id="clubadmin__addcourt"><%>cEdit<%></button>
+          <button id="clubadmin__deletecourt"><%>cDelete<%></button>
         </td>
         </tr>
       </tbody>
     </table>
-    <button id="clubadmin__addcourt">Add court</button>
+    <button id="clubadmin__addcourt"><%>cAddCourt<%></button>
   </br>
-    <button id="clubadmin__close">Close</button>
+    <button id="clubadmin__close"><%>cClose<%></button>
     
    
   </form>
