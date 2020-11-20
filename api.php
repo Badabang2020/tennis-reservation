@@ -37,6 +37,9 @@ if (isset($_REQUEST["purpose"])) {
         case "EditMember":
             editMember();
             break;
+        case "ChangeMemberPassword":
+            changeMemberPassword();
+            break;
         case "DeletMember":
             deleteMember();
             break;
@@ -107,14 +110,15 @@ function registerClub()
 function editClub()
 {
     $query = "UPDATE club SET (clubname, address, postcode, logo, hoursAtOnce, hoursPerWeek, openFrom, openUntil, daysBefore)
-    VALUES ('" . $GLOBALS['data']->clubname . "','" . $GLOBALS['data']->address . "','" . $GLOBALS['data']->postcode . "','" . $GLOBALS['data']->logo . "','" . $GLOBALS['data']->hoursAtOnce . "','" . $GLOBALS['data']->hoursPerWeek . "','" . $GLOBALS['data']->openFrom . "','" . $GLOBALS['data']->openUntil . "','" . $GLOBALS['data']->daysBefore . "');";
+    VALUES ('" . $GLOBALS['data']->clubname . "','" . $GLOBALS['data']->address . "','" . $GLOBALS['data']->postcode . "','" . $GLOBALS['data']->logo . "','" . $GLOBALS['data']->hoursAtOnce . "','" . $GLOBALS['data']->hoursPerWeek . "','" . $GLOBALS['data']->openFrom . "','" . $GLOBALS['data']->openUntil . "','" . $GLOBALS['data']->daysBefore . "') 
+    WHERE clubname = '" . $GLOBALS['data']->clubname . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Edit successfully :)" : "Could not edit club");
 }
 
 function deleteClub()
 {
-    $query = "DELETE FROM club WHERE clubname=" . $GLOBALS['data']->clubname . ";";
+    $query = "DELETE FROM club WHERE clubname='" . $GLOBALS['data']->clubname . "'";
     $result = $GLOBALS['connection']->query($query);
     die($result);
 }
@@ -133,22 +137,32 @@ function getClub()
 function registerMember()
 {
     $query = "INSERT INTO member (first_name, last_name, gender, birthday, phonenumber, email, password, role, clubname) 
-    VALUES ('" . $GLOBALS['data']->first_name . "',''" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
+    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
     $result = $GLOBALS['connection']->query($query);
     die($result ? json_encode($GLOBALS['connection']->insert_id) : "Could not register member");
 }
 
 function editMember()
 {
-    $query = "UPDATE member SET (first_name, last_name, gender, birthday, phonenumber, email, password, role, clubname) 
-    VALUES ('" . $GLOBALS['data']->first_name . "',''" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
+    $query = "UPDATE member SET (first_name, last_name, gender, birthday, phonenumber, email, role, clubname) 
+    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . $GLOBALS['data']->role . "','" . $GLOBALS['data']->clubname . "') 
+    WHERE membernumber = '" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Edit successfully :)" : "Could not edit member");
 }
 
+function changeMemberPassword()
+{
+    $query = "UPDATE member SET (password) 
+    VALUES ('" . $GLOABALS['data']->password . "') 
+    WHERE membernumber = '" . $GLOABALS['data']->membernumber . "';";
+    $result = $GLOBALS['connection']->query($query);
+    die($result ? "Changed Password successfully :)" : "Could not change Member Password");
+}
+
 function deleteMember()
 {
-    $query = "DELETE FROM member WHERE membernumber=" . $GLOBALS['data']->membernumber . ";";
+    $query = "DELETE FROM member WHERE membernumber='" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result);
 }
@@ -182,14 +196,15 @@ function addCourt()
 
 function editCourt()
 {
-    $query = "UPDATE court SET (clubname, name, surface) VALUES ('" . $GLOBALS['data']->clubname . "','" . $GLOBALS['data']->name . "','" . $GLOBALS['data']->surface . "');";
+    $query = "UPDATE court SET (clubname, name, surface) VALUES ('" . $GLOBALS['data']->clubname . "','" . $GLOBALS['data']->name . "','" . $GLOBALS['data']->surface . "') 
+    WHERE courtid = '" . $GLOBALS['data']->id . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Edit successfully :)" : "Could not edit court");
 }
 
 function deleteCourt()
 {
-    $query = "DELETE FROM court WHERE courtid=" . $GLOBALS['data']->id . ";";
+    $query = "DELETE FROM court WHERE courtid='" . $GLOBALS['data']->id . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result);
 }
@@ -223,14 +238,15 @@ function addReservation()
 
 function editReservation()
 {
-    $query = "UPDATE reservation SET (reservedFrom, reservedUntil, date, reservationstype, courtid, membernumber, activ) VALUES ('" . $GLOBALS['data']->reservedFrom . "','" . $GLOBALS['data']->reservedUntil . "','" . $GLOBALS['data']->date . "','" . $GLOBALS['data']->reservationstype . "','" . $GLOBALS['data']->courtid . "','" . $GLOBALS['data']->membernumber . "','" . $GLOBALS['data']->activ . "');";
+    $query = "UPDATE reservation SET (reservedFrom, reservedUntil, date, reservationstype, courtid, membernumber, activ) VALUES ('" . $GLOBALS['data']->reservedFrom . "','" . $GLOBALS['data']->reservedUntil . "','" . $GLOBALS['data']->date . "','" . $GLOBALS['data']->reservationstype . "','" . $GLOBALS['data']->courtid . "','" . $GLOBALS['data']->membernumber . "','" . $GLOBALS['data']->activ . "') 
+    WHERE reservationnumber = '" . $GLOBALS['data']->reservationnumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Edit successfully :)" : "Could not add court");
 }
 
 function deleteReservation()
 {
-    $query = "DELETE FROM reservation WHERE reservationnumber=" . $GLOBALS['data']->reservationnumber . ";";
+    $query = "DELETE FROM reservation WHERE reservationnumber='" . $GLOBALS['data']->reservationnumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result);
 }

@@ -79,8 +79,17 @@ export default class API {
         API.request("DeleteMember", JSON.stringify(memberId), callback);
     }
 
-    editMember(email, first_name, last_name, gender, phonenumber, password, birthday, role, callback) {
+    changeMemberPassword(membernumber, password) {
         let memberInfo = {
+            membernumber: membernumber,
+            password: password
+        };
+        API.request("ChangeMemberPassword", JSON.stringify(memberInfo), callback);
+    }
+
+    editMember(membernumber, email, first_name, last_name, gender, phonenumber, password, birthday, role, clubname, callback) {
+        let memberInfo = {
+            membernumber: membernumber,
             email: email,
             first_name: first_name,
             last_name: last_name,
@@ -89,6 +98,7 @@ export default class API {
             phonenumber: phonenumber,
             password: password,
             role: role,
+            clubname: clubname,
         }
         API.request("EditMember", JSON(memberInfo), callback)
     }
