@@ -9,6 +9,29 @@ export default class ClubSettingsView extends Bash_Route {
 
     // @Overwrite
     init() {
+        //mögliche URL:
+        //https://p1651651.mittwaldserver.info/platzreservierung/clubsettings?clubname=codersbaySV
+        //Set this.club über die GET-Parameter
+        initSettings();
+        initMembers();
+        initCourts();
+    }
+
+
+    initSettings(){
+
+    }
+    
+    initMembers(){
+        window.bash.model.getMembersOfClub(function(members){
+            for(const member of members){
+                //$("#memberstable").append("<tr><td>"+member.name+"</td></tr>");
+                //Mit diesen Members foreach Memberzeile aufbauen.
+            }
+        })
+    }
+
+    initCourts(){
 
     }
 }
