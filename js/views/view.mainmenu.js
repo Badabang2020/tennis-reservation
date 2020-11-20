@@ -25,11 +25,11 @@ export default class MainMenuView extends Bash_Route{
         if(this.role !== "superduperadmin") {
             $("#clubsettings").hide();
         }
-        window.bash.api.getClub(JSON.parse(window.bash.utils.getCookie("user")).clubname, function(clubResult){
-        if(!window.bash.utils.isEmpty(clubResult)){
-            $("#clublogo").attr("src", JSON.parse(clubResult).logo);
-        }
-        });
+        // window.bash.api.getClub(JSON.parse(window.bash.utils.getCookie("user")).clubname, function(clubResult){
+        // if(!window.bash.utils.isEmpty(clubResult)){
+        //     $("#clublogo").attr("src", JSON.parse(clubResult).logo);
+        // }
+        // });
         //let daysBefore = window.bash.model.club.daysBefore;
         let daysBefore = 14;
         for (let i = 0; i < daysBefore; i++){
