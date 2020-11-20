@@ -173,7 +173,7 @@ function getMembersOfClub()
     $query = "SELECT * FROM member WHERE clubname = '" . $GLOBALS['data']->clubname . "'";
     $club = $GLOBALS['connection']->query($query);
     if ($club)
-        die(json_encode($club->fetch_assoc()));
+        die(json_encode($club->fetch_all(MYSQLI_ASSOC)));
     else
         die(false);
 }
