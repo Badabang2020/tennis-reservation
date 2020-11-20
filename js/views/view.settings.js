@@ -50,6 +50,9 @@ export default class SettingsView extends Bash_Route {
                     if(mysqlResult !== "noMatch") {
                         if (newPassword === newPassword2) {
                             window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
+                                $("#pCurrentPassword").val("");
+                                $("#pNewPassword").val("");
+                                $("#pNewPassword2").val("");
                                 console.log(mysqlResult);
                             });
                         }
