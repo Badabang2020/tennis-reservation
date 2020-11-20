@@ -17,8 +17,8 @@
 
         <label>Gender</label><br>
         <select id="pGender">
-            <option value="f">Female</option>
-            <option value="m">Male</option>
+            <option value="f">f</option>
+            <option value="m">m</option>
         </select><br>
 
         <label>Birthdate</label><br>
