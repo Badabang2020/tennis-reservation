@@ -78,5 +78,5 @@ if (isset($_GET['register'])) {                                     //checking i
 //        die(json_encode($connection->insert_id));
 //    else
 //        die("Could not add Club");
-
-// }
+}
+// 
