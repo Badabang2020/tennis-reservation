@@ -150,7 +150,8 @@ export default class API {
     /////////////////////// API request ///////////////////////////////
     static request(purpose, json, callback) {
         $.ajax({
-            url: "http://p452177.mittwaldserver.info/platzreservierung/api.php",
+            //url: "http://p452177.mittwaldserver.info/platzreservierung/api.php",
+            url: "http://127.0.0.1/tennis-reservation/api.php",
             data: {
                 purpose: purpose,
                 data: json

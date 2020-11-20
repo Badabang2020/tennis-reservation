@@ -5,14 +5,17 @@ import MainMenuView from "./views/view.mainmenu.js";
 import RegisterView from './views/view.register.js';
 import LoginView from "./views/view.login.js";
 import SettingsView from './views/view.settings.js';
+import  ClubSettingsView from './views/view.clubsettings.js';
+
 
 //Routen-Array anlegen
 let routes = [
     new MainMenuView("/", "mainmenu"),
     new RegisterView("/register", "register"),
     new LoginView("/login", "login"),
-    new SettingsView("/settings", "settings")
+    new SettingsView("/settings", "settings"),
+    new ClubSettingsView("/clubsettings", "clubsettings"),
 ];
 
-// const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes, "de", "en");
-const Bash = new Bash_PWA("http://p452177.mittwaldserver.info/platzreservierung/", "templates", routes);
+ const Bash = new Bash_PWA("http://127.0.0.1/tennis-reservation/", "templates", routes, "de", "en");
+//const Bash = new Bash_PWA("http://p452177.mittwaldserver.info/platzreservierung/", "templates", routes);
