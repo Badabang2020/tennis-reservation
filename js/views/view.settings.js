@@ -8,8 +8,9 @@ export default class SettingsView extends Bash_Route {
     }
 
     init() {
-        $('#back').unbind('click').on('click', function () {
-            window.location.hash = "/";
-        });
+        // Button doesn't exist anymore
+        // $('#back').unbind('click').on('click', function () {
+        //     window.location.hash = "/"; // go to Route
+        // });
     }
 }
