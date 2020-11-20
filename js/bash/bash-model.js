@@ -1,15 +1,28 @@
 "use strict";
 
-export default class bashModel {
+export default class Bash_Model {
     constructor() {
-        this.club = {};
+        this.clubname = "myClub"; // das must geänderrt werden.
         this.members = undefined;
     }
 
     getMembersOfClub(callback){
-        window.bash.api.getMembersOfClub(this.club, function(members){
-            this.members = members;
-            callback();
-        }
+        let self = this;
+        window.bash.api.getMembersOfClub(this.clubname,function(members){
+            self.members = members;
+            console.log("Members:"+self.members);
+            callback(members);
+        })
     }
+
+    // delete one member of your club
+
+    deleteMembersOfClub(memberId, callback){
+        let self = this;
+        window.bash.api.deleteMember(memberId,function(members){
+            console.log("Member with "+memberId+" was deleted.");
+            callback(members);
+        })
+    }
+
 }

@@ -3,6 +3,7 @@
 import Bash_Utils from './bash-utils.js';
 import Bash_SPA_Router from "./bash-spa-router.js";
 import Bash_Translator from "./bash-translator.js";
+import Bash_Model from './bash-model.js';
 import API from "./bash-api.js";
 /********************************
  *   Class-Bundle for PWAs.
@@ -20,7 +21,7 @@ import API from "./bash-api.js";
 export default class bash_pwa {
     constructor(webRoot, templatesPath, routes, ...languages) {
         //TODO Alle möglichen Properties.
-        // this.model = new bash_model();
+        this.model = new Bash_Model();
         this.api = new API();
         this.system = {
             webRoot : webRoot,
