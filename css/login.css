@@ -1,29 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-
-body{
-    font-family: 'Balsamiq Sans', cursive;
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/balsamiqsans/v2/P5sEzZiAbNrN8SB3lQQX7Pnc8dk.ttf) format('truetype');
 }
-
-.image{
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: center;
+body {
+  font-family: 'Balsamiq Sans', cursive;
 }
-
-
-
-.login{
-    width: 20rem;
-    display: flex;
-    justify-content: center;
+.image {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
-
-.login-section{
-    width: 100%;
+.login {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
 }
-
-input{
-    width: 100%;
-    height: 2rem;
+.login-section {
+  width: 100%;
+}
+input {
+  width: 100%;
+  height: 2rem;
 }

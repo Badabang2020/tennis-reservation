@@ -1,54 +1,143 @@
-/*****************************************************
-* Styling the login window
-*****************************************************/
-
-.login {
-  max-width: 400px;
-  margin: auto;
+header nav {
   display: flex;
-  flex-direction: row;
+  margin: 2rem 0;
+  height: 2rem;
+  flex-grow: 0;
+  justify-content: space-between;
+  background-color: darkgrey;
+  padding: 0.6rem;
 }
-
-.login img {
-  width: 100%;
-  object-fit: contain;
-  padding-right: 20px;
-}
-.left-image {
-  width: 30%;
-}
-
-.right-section {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-}
-
-.right-section .row {
+header nav img {
   flex: 1;
+  transform: translate(5%, -33%);
+  height: fit-content;
 }
-
-.right-section .row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 10px;
-}
-
-.right-section .row-right {
+header nav .buttonBox {
+  flex: 9;
   display: flex;
   justify-content: flex-end;
 }
-
-.right-section #password {
-  flex: 1;
+header nav .buttonBox button {
+  padding: 0.5em 1em;
+  margin-left: 1rem;
+  background: #26a697;
+  border-width: 1px;
+  border-color: #26a697;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  outline: none;
 }
-
-.right-section #username {
-  flex: 1;
+header nav .buttonBox button:hover {
+  background-color: #31d1be;
+  box-shadow: 0 0 5px #292929;
 }
-
-.right-section .row-right button {
-  padding-left: 10px;
+header nav .buttonBox #usersettings {
+  position: relative;
 }
-@import "main.css";
+header nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 2rem;
+  border-radius: 3px;
+}
+header nav .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #31d1be;
+  cursor: pointer;
+}
+header nav .dropdown-content a:hover {
+  background-color: #28b1a1;
+}
+header nav .show {
+  display: block;
+}
+@font-face {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/balsamiqsans/v2/P5sEzZiAbNrN8SB3lQQX7Pnc8dk.ttf) format('truetype');
+}
+body {
+  font-family: 'Balsamiq Sans', cursive;
+}
+.image {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.login {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}
+.login-section {
+  width: 100%;
+}
+input {
+  width: 100%;
+  height: 2rem;
+}
+body {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+body h2 {
+  margin: 5px inherit;
+  text-align: center;
+}
+body h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+body form {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid gray;
+}
+body form label {
+  font-weight: 500;
+}
+body form input,
+body form select {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+body form input:not(:last-of-type),
+body form select {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+body form input:last-of-type {
+  padding: 0.7rem;
+}
+/*****************************************************
+* Styling the main window
+*****************************************************/
+#mainmenu {
+  margin: 0 12rem;
+}
+#mainmenu .header {
+  line-height: 0.4rem;
+  margin-bottom: 2rem;
+}
+#mainmenu .header h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px 5px grey;
+}
+#mainmenu .header h3 {
+  text-align: center;
+  text-shadow: 2px 2px 5px grey;
+}

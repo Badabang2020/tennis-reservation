@@ -9,9 +9,15 @@
 <body>
     <header>
         <nav>
-            <img id="clublogo" src="" alt="clublogo"> <!--links oben das logo des clubs-->
-            <button type="button" id="clubsettings">Club-Settings</button> <!--clubsetting button für admin, ausblenden wenn rolle = knecht-->
-            <button type="button" id="usersettings">User-Settings</button> 
+            <img id="clublogo" src="./css/images/left-image.png" alt="clublogo"> <!--links oben das logo des clubs-->
+            <div class="buttonBox">
+                <button type="button" id="clubsettings">Club-Settings</button> <!--clubsetting button für admin, ausblenden wenn rolle = knecht-->
+                <button type="button" id="usersettings">User</button>
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="#home">Settings</a>
+                        <a id="logout">Logout</a>
+                    </div>
+            </div>
         </nav>
     </header>
     <div id="bash_app"></div>

@@ -1,7 +1,4 @@
- <link rel="stylesheet" href="./css/login.css">
- <body>   
- 
-    <div class="image">
+<div class="image">
         <img src="./css/images/left-image.png" alt="">
     </div>
     <div class="login">
@@ -26,4 +23,3 @@
         </div>
     </div>
 </div>
-</body>
