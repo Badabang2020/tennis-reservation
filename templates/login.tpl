@@ -1,10 +1,9 @@
  <link rel="stylesheet" href="./css/login.css">
- <body>   
- 
+
+<div id="login">
     <div class="image">
         <img src="./css/images/left-image.png" alt="">
     </div>
-    <div class="login">
     <div class="login-section">
         <h2>Einloggen</h2>
         <div class="">
@@ -26,4 +25,3 @@
         </div>
     </div>
 </div>
-</body>
