@@ -52,6 +52,8 @@ Bash_Language.en = {
     court: "Court",
 
     //Clubsettings
+    cAdministration: "Administration",
+    cYourSettings: "Settings",
     clubAddress: "Club Address",
     postalCode: "Post Code",
     openingHours: "Opening Hours",
@@ -68,7 +70,7 @@ Bash_Language.en = {
     cYourCourts: "Your Courts",
     cSurface: "Surface",
     cAddCourt: "Add Court",
-    cClose: "Close"
+    cClose: "Close",
 
     cEdit: "Edit",
     cDelete: "Delete",
@@ -108,6 +110,8 @@ Bash_Language.de = {
     court : "Platz",
 
     //Clubsettings
+    cAdministration: "Administration",
+    cYourSettings: "Einstellungen",
     clubAddress: "Club Adresse",
     postalCode: "Postleitzahl",
     openingHours: "Öffnungszeiten",
@@ -124,7 +128,7 @@ Bash_Language.de = {
     cYourCourts: "Deine Plätze",
     cSurface: "Oberfläche",
     cAddCourt: "Platz hinzufügen",
-    cClose: "Beenden"
+    cClose: "Beenden",
 
     cEdit: "Bearbeiten",
     cDelete: "Entfernen",

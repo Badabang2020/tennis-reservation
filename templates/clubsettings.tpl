@@ -1,10 +1,7 @@
 <div id="clubsettings">
-    <div class="header">
-        <h1><%>clubSettingHeader<%></h1>
-    </div>
-<h1>Administration</h1>
+  <h1><%>cAdministration<%></h1>
 
-  <h2>Your settings</h2>
+  <h2><%>cYourSettings<%></h2>
   <form action="">
     <label for="clubadmin__adress"><%>clubAddress<%></label>
     <input type="text" name = "club-adress" id="clubadmin__adress">
@@ -29,16 +26,9 @@
           <th><%>cActions<%></th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-        <td>cell1_1</td>
-        <td>cell2_1</td>
-        <td>cell3_1</td>
-        <td>
-          <button id="clubadmin__editmember"><%>cEdit<%></button>
-          <button id="clubadmin__deletemember"><%>cDelete<%></button>
-        </td>
-        </tr>
+      <tbody id="club-settings-members-table-body">
+        
+        
       </tbody>
     </table>
     <button id="clubadmin__addmember"><%>cAddMember<%></button>

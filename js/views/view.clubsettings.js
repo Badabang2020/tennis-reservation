@@ -9,23 +9,41 @@ export default class ClubSettingsView extends Bash_Route {
 
     // @Overwrite
     init() {
-        //mögliche URL:
-        //https://p1651651.mittwaldserver.info/platzreservierung/clubsettings?clubname=codersbaySV
-        //Set this.club über die GET-Parameter
-        initSettings();
-        initMembers();
-        initCourts();
+        this.initSettings();
+        this.initMembers();
+        this.initCourts();
     }
 
 
     initSettings(){
-
+        console.log("Init settings");
     }
     
     initMembers(){
         window.bash.model.getMembersOfClub(function(members){
-            for(const member of members){
-                //$("#memberstable").append("<tr><td>"+member.name+"</td></tr>");
+            
+            let jsonMembers = JSON.parse(members);
+
+            // console.log(jsonMembers);
+            for(const member of jsonMembers){
+                console.log(member);
+                
+                $("#clubadmin__deletemember").unbind("click").on("click", function(){
+                        console.log("ACTION: Delete member");
+                    });
+
+                    
+
+
+                $("#club-settings-members-table-body").append("<tr>"+
+                "<td>"+member.first_name+" "+member.last_name+"</td>"+
+                "<td>"+member.email+"</td>"+
+                "<td>"+member.adress+"</td>"+
+                "<td>"+
+                "  <button id=\"clubadmin__editmember\"><%>cEdit<%></button>"+
+                "  <button id=\"clubadmin__deletemember\"><%>cDelete<%></button>"+
+                "</td>"+
+                "</tr>");
                 //Mit diesen Members foreach Memberzeile aufbauen.
             }
         })
