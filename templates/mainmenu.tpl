@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="./css/main.css">
+
+<body>
 <div id="mainmenu">
     <div class="header">
         <h1><%>mainHeader<%></h1>
@@ -14,3 +17,4 @@
     </div>
     <button id="logout">LOGOUT</button>
 </div>
+</body>
