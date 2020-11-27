@@ -1,0 +1,59 @@
+#registerCSS {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+#registerCSS h2 {
+  margin: 5px inherit;
+  text-align: center;
+}
+#registerCSS h3 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+#registerCSS div {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+#registerCSS div label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+#registerCSS div input {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+#registerCSS div input {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+#registerCSS div button {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  background-color: #1865f2;
+  border-radius: 5px;
+}
+#registerCSS div button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
+}
+#registerCSS div #register {
+  border: none;
+  background-color: #16d920;
+}
+#registerCSS div #register:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #16d920;
+}
+#registerCSS div p {
+  font-size: 1rem;
+}
+#registerCSS .club,
+#registerCSS .contact,
+#registerCSS .password {
+  border-bottom: 1px solid gray;
+}
