@@ -12,7 +12,7 @@ export default class RegisterView extends Bash_Route {
     $("#register").unbind("click").on("click", function(e) {
         e.preventDefault();
         if ($("#password").val() == $("#passwordCheck").val()){
-            window.bash.api.registerClub($("#clubname").val(), $("#streetName").val(), $("#postcode").val(), $("#firstName").val(), $("#lastName").val(), $("#email").val(), $("#password").val(), function(mysqlResult) {
+            window.bash.api.registerClub($("#clubname").val(), $("#streetName").val(), $("#postcode").val(), function(mysqlResult) {
                 //check if registerClub was correct ->
                 if(mysqlResult != "Could not register club"){    
                     window.bash.api.login(email, password, function(mysqlResult){
@@ -27,6 +27,26 @@ export default class RegisterView extends Bash_Route {
                     window.bash.utils.setCookie("user", mysqlResult, -1);
                         window.location.hash = "/";
                 }
+
+            });
+            window.bash.api.registerMember(
+                $("#firstName").val(), 
+                $("#lastName").val(), 
+                $("#email").val(), 
+                $("#password").val(), function(mysqlResult) {
+                    if(mysqlResult != "Could not register member"){    
+                        window.bash.api.login(email, password, function(mysqlResult){
+                            if(mysqlResult !== "Could not register member") {
+                                window.bash.utils.setCookie("user", mysqlResult, 40);
+                                window.location.hash = "/";
+                            }
+                            else {
+                                console.log("Login Error: " + mysqlResult);
+                            }
+                        });
+                        window.bash.utils.setCookie("user", mysqlResult, -1);
+                            window.location.hash = "/";
+                    }
             });
         } else {
             //FIXME:
