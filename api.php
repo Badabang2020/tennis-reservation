@@ -55,6 +55,9 @@ if (isset($_REQUEST["purpose"])) {
         case "GetMembersOfClub":
             getMembersOfClub();
             break;
+        case "GetMemberEmail":
+            getMemberEmail();
+            break;
             // ---- Court ----
         case "AddCourt":
             addCourt();
@@ -142,8 +145,11 @@ function getClub()
 // ---------------------------- Member Begin ----------------------------
 function registerMember()
 {
+    $gender = $GLOBALS["data"]->gender || "m";
+    $birthday = $GLOBALS["data"]->birthday || "1990-01-01";
+    $phonenumber = $GLOBALS["data"]->phonenumber || "";
     $query = "INSERT INTO member (first_name, last_name, gender, birthday, phonenumber, email, password, role, clubname) 
-    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
+    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $gender . "','" . $birthday . "','" . $phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
     $result = $GLOBALS['connection']->query($query);
     die($result ? json_encode($GLOBALS['connection']->insert_id) : "Could not register member");
 }
@@ -160,8 +166,8 @@ function editMember()
 function changeMemberPassword()
 {
     $query = "UPDATE member SET (password) 
-    VALUES ('" . $GLOABALS['data']->password . "') 
-    WHERE membernumber = '" . $GLOABALS['data']->membernumber . "';";
+    VALUES ('" . $GLOBALS['data']->password . "') 
+    WHERE membernumber = '" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Changed Password successfully :)" : "Could not change Member Password");
 }
@@ -188,6 +194,16 @@ function getMembersOfClub()
     $club = $GLOBALS['connection']->query($query);
     if ($club)
         die(json_encode($club->fetch_all(MYSQLI_ASSOC)));
+    else
+        die(false);
+}
+
+function getMemberEmail()
+{
+    $query = "SELECT * FROM member WHERE email = '" . $GLOBALS['data']->email . "'";
+    $club = $GLOBALS['connection']->query($query);
+    if ($club)
+        die(json_encode($club->fetch_assoc()));
     else
         die(false);
 }
