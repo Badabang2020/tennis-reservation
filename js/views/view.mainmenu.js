@@ -35,36 +35,40 @@ export default class MainMenuView extends Bash_Route{
         // }
         // });
         //let daysBefore = window.bash.model.club.daysBefore;
-        let daysBefore = 14;
-        var date = new Date();
-        for (let i = 0; i < daysBefore; i++){
-            this.renderTable(date);
-            date.setDate(date.getDate() + 1);
-        }
+        window.bash.api.getClub(window.bash.utils.getCookie().clubname, function(clubResult){
+            if (clubResult)
+                let club = JSON.parse(clubResult);
+            var date = new Date();
+            for (let i = 0; i < club.daysBefore; i++){
+                this.renderTable(date, club);
+                date.setDate(date.getDate() + 1);
+            }
+        });
     }
     
-    renderTable(date) {
+    renderTable(date, club) {
         date = date.toLocaleDateString();
-        let courtArr = ["Platz 1", "Platz 2", "Platz 3"];
-        let table = "<table><tr>";
-        let startHour = 8.0;
-        let startMin = 0;
-        let endHour = 22.0;
-        let endMin = 0;
-        let minute = 0;
-        // Creating tableheader (times)
-        table += "<th>" + date + "</th>";
-        for (let hour = startHour; hour <= endHour; hour++)
-            table += "<th>"+hour+"</th>";
-        // Creating tabledata
-        table += "</tr>";
-        courtArr.forEach(court => {
-            table += "<tr><td>" + court + "</td>";
+        window.bash.api.getCourtsOfClub(club.clubname, function(courtResult){
+            if (courtResult)
+            let courtArr = JSON.parse(courtResult);
+            console.log(courtArr);
+            let startHour = club.openFrom;
+            let endHour = club.openUntil;
+
+            let table = "<table><tr>";
+            // Creating tableheader (times)
+            table += "<th>" + date + "</th>";
             for (let hour = startHour; hour <= endHour; hour++)
-                table += "<td>"+ "COVID" + "</td>";
+                table += "<th>"+hour+"</th>";
+            // Creating tabledata
+            table += "</tr>";
+            for(const[key,value] of Object.entries(courtArr)){
+                table += "<tr><td>" + value.name + "</td>";
+                for (let hour = startHour; hour <= endHour; hour++)
+                    table += "<td>"+ "COVID" + "</td>";
+            }
+            table += "</tr></table>";
+            $(".maincontent").append(table);
         });
-        table += "</tr></table>";
-        
-        $(".maincontent").append(table);
     }
 }
