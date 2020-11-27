@@ -9,7 +9,7 @@ export default class SettingsView extends Bash_Route {
 
     init() {
         // checks if the use has a cookie
-        if(!window.bash.utils.getCookie("user")){
+        if(window.bash.utils.getCookie("user")){
             // set default values
             let cookie = window.bash.utils.getCookie("user");
             let userData = JSON.parse(cookie);
