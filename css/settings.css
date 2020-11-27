@@ -1,35 +1,31 @@
-body {
-  margin-left: 25%;
-  margin-right: 25%;
-}
-body h2 {
+#settingCSS h2 {
   margin: 5px inherit;
   text-align: center;
 }
-body h3 {
+#settingCSS h3 {
   font-size: 1.5rem;
   text-align: center;
 }
-body form {
+#settingCSS form {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid gray;
 }
-body form label {
+#settingCSS form label {
   font-weight: 500;
 }
-body form input,
-body form select {
+#settingCSS form input,
+#settingCSS form select {
   border: 1px solid #cccccc;
   border-radius: 5px;
 }
-body form input:not(:last-of-type),
-body form select {
+#settingCSS form input:not(:last-of-type),
+#settingCSS form select {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
 }
-body form input:last-of-type {
+#settingCSS form input:last-of-type {
   padding: 0.7rem;
 }
