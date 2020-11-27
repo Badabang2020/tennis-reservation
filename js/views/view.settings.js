@@ -28,12 +28,14 @@ export default class SettingsView extends Bash_Route {
             this.initializesValue(firstname, lastname, email, phoneNumber, gender, birthdate, role);
 
             // edit Basic values
-            $("#pSaveChanges").unbind("click").on("click", function(){
+            $("#pSaveChanges").unbind("click").on("click", function(e){
+                e.preventDefault();
                 this.changeMemberBasic(role, clubname);
             });
 
             // change password
-            $("#pChangePassword").unbind("click").on("click", function(){
+            $("#pChangePassword").unbind("click").on("click", function(e){
+                e.preventDefault();
                 this.changeMemberPassword(membernumber);
             });
 
@@ -68,7 +70,6 @@ export default class SettingsView extends Bash_Route {
         email = $("#pEmail").val();
         birthdate = $("#pBirthday").val();
         window.bash.api.editMember(membernumber, email, firstname, lastname, gender, phoneNumber, birthdate, role, clubname, function(mysqlResult){
-            mysqlResult.preventDefault();
             console.log(mysqlResult);
         });
     }
@@ -82,7 +83,6 @@ export default class SettingsView extends Bash_Route {
             if(mysqlResult !== "noMatch") {
                 if (newPassword === newPassword2) {
                     window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
-                        mysqlResult.preventDefault();
                         $("#pCurrentPassword").val("");
                         $("#pNewPassword").val("");
                         $("#pNewPassword2").val("");
