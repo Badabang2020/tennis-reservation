@@ -87,7 +87,7 @@ export default class API {
         API.request("ChangeMemberPassword", JSON.stringify(memberInfo), callback);
     }
 
-    editMember(membernumber, email, first_name, last_name, gender, phonenumber, password, birthday, role, clubname, callback) {
+    editMember(membernumber, email, first_name, last_name, gender, phonenumber, birthday, role, clubname, callback) {
         let memberInfo = {
             membernumber: membernumber,
             email: email,
@@ -96,7 +96,6 @@ export default class API {
             gender: gender,
             birthday: birthday,
             phonenumber: phonenumber,
-            password: password,
             role: role,
             clubname: clubname,
         }

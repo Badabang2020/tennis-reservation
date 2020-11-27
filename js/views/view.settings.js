@@ -41,7 +41,7 @@ export default class SettingsView extends Bash_Route {
                 phoneNumber = $("#pPhoneNumber").val();
                 email = $("#pEmail").val();
                 birthdate = $("#pBirthday").val();
-                window.bash.api.editMember(membernumber, email, firstname, lastname, gender, phoneNumber, password, birthdate, role, clubname, function(mysqlResult){
+                window.bash.api.editMember(membernumber, email, firstname, lastname, gender, phoneNumber, birthdate, role, clubname, function(mysqlResult){
                     console.log(mysqlResult);
                 });
             });
