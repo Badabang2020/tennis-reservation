@@ -258,7 +258,7 @@ header nav .show {
 * Styling the main window
 *****************************************************/
 #mainmenu {
-  margin: 0 12rem;
+  margin: 0 auto;
 }
 #mainmenu .header {
   line-height: 0.4rem;
@@ -272,6 +272,14 @@ header nav .show {
 #mainmenu .header h3 {
   text-align: center;
   text-shadow: 2px 2px 5px grey;
+}
+#mainmenu table {
+  width: 100%;
+  margin-bottom: 5px;
+}
+#mainmenu table th,
+#mainmenu table td {
+  border: 1px solid #c7c7c7;
 }
 #registerCSS {
   margin-left: 25%;

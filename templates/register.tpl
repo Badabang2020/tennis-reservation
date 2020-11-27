@@ -1,20 +1,19 @@
  <div id="registerCSS">
     <h2><%>register<%></h2>
 
-    <h3><%>club<%></h3>   
-    <div class="club">
-            <label for="clubname">Clubname:</label><br>
-            <input type="text" id="clubname" name="clubname" placeholder="Clubname" required><br>
+    <h3><%>club<%></h3>  
+    <form> 
+        <div class="club">
+                <label for="clubname">Clubname:</label><br>
+                <input type="text" id="clubname" name="clubname" placeholder="Clubname" required><br>
 
-            <label for="streetName"><%>street<%>:</label><br>
-            <input type="text" id="streetName" name="streetName" placeholder="Musterstraße 5" required><br>
+                <label for="streetName"><%>street<%>:</label><br>
+                <input type="text" id="streetName" name="streetName" placeholder="Musterstraße 5" required><br>
 
-            <label for="city"><%>city<%>:</label><br>
-            <input type="text" id="city" name="city" placeholder="Linz" required><br>
+                <label for="postcode"><%>postcode<%>:</label><br>
+                <input type="text" id="postcode" name="postcode" placeholder="4020" required><br>
+        </div>
 
-            <label for="postcode"><%>postcode<%>:</label><br>
-            <input type="text" id="postcode" name="postcode" placeholder="4020" required><br>
-  
         <h3><%>contact<%>:</h2>
         <div class="contact">
                 <label for="firstName"><%>firstName<%>:</label><br>
@@ -36,8 +35,7 @@
         </div>
 
         <div class="registerAccount">
-            <button  id="register" name="register"><%>register<%></button>
-            <button  id="registerCancel" name="cancel"><%>cancel<%></button>
+            <input type="submit" id="register" name="register" value="<%>register<%>"></input>
         </div>
-    </div>
+    </form>
 </div>

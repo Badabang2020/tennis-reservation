@@ -16,22 +16,22 @@ export default class API {
     }
 
     /////////////////////// Club Functions ///////////////////////////////
-    registerClub(clubname, adress, postcode, logo, hoursAtOnce, hoursPerWeek, openFrom, openUntil, daysBefore, email, first_name, last_name, gender, birthday, phonenumber, password, callback) {
+    registerClub(clubname, adress, postcode, email, first_name, last_name, password, callback) {
         let clubInfo = {
             clubname: clubname,
             adress: adress,
             postcode: postcode,
-            logo: logo,
-            hoursAtOnce: hoursAtOnce,
-            hoursPerWeek: hoursPerWeek,
-            openFrom: openFrom,
-            openUntil: openUntil,
-            daysBefore: daysBefore
+            logo: '',
+            hoursAtOnce: 2,
+            hoursPerWeek: 5,
+            openFrom: 7,
+            openUntil: 21,
+            daysBefore: 14
         };
         let self = this;
         API.request("RegisterClub", JSON.stringify(clubInfo), function (data) {
             if (data != "Could not register club")
-                self.registerMember(email, first_name, last_name, gender, birthday, phonenumber, password, "admin", clubname, callback);
+                self.registerMember(email, first_name, last_name, password, "admin", clubname, callback);
         });
     }
 
@@ -114,6 +114,13 @@ export default class API {
             membernumber: membernumber
         };
         API.request("GetMembersOfClub", JSON.stringify(memberInfo), callback);
+    }
+
+    getMemberEmail(email, callback){
+        let emailInfo = {
+            email: email
+        };
+        API.request("GetMemberEmail", JSON.stringify(emailInfo), callback);
     }
 
     /////////////////////// Court Functions ///////////////////////////////
