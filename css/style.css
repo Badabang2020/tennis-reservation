@@ -179,42 +179,75 @@ header nav .show {
   width: 695px;
   flex-grow: 0;
 }
+#settingCSS {
+  margin-left: 25%;
+  margin-right: 25%;
+}
 #settingCSS h2 {
   margin: 5px inherit;
   text-align: center;
 }
 #settingCSS h3 {
   font-size: 1.5rem;
-  text-align: center;
+  text-align: left;
 }
-#settingCSS form {
+#settingCSS div {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid gray;
 }
-#settingCSS form label {
+#settingCSS div label {
   font-weight: 500;
+  font-size: 1rem;
 }
-#settingCSS form input,
-#settingCSS form select {
+#settingCSS div input,
+#settingCSS div select {
   border: 1px solid #cccccc;
   border-radius: 5px;
 }
-#settingCSS form input:not(:last-of-type),
-#settingCSS form select {
+#settingCSS div input,
+#settingCSS div select {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
 }
-#settingCSS form input:last-of-type {
+#settingCSS div select {
+  width: 103%;
+}
+#settingCSS div button {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
   padding: 0.7rem;
+  margin-top: 0.5rem;
+  background-color: #1865f2;
+  border-radius: 5px;
+}
+#settingCSS div button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
+}
+#settingCSS div #pDeleteAccount {
+  border: none;
+  background-color: #d92916;
+}
+#settingCSS div #pDeleteAccount:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916;
+}
+#settingCSS div p {
+  font-size: 1rem;
+}
+#settingCSS .basics,
+#settingCSS .password,
+#settingCSS .role {
+  border-bottom: 1px solid gray;
 }
 /*****************************************************
 * Styling the main window
 *****************************************************/
 #mainmenu {
-  margin: 0 auto;
+  margin: 0 12rem;
 }
 #mainmenu .header {
   line-height: 0.4rem;
@@ -229,11 +262,62 @@ header nav .show {
   text-align: center;
   text-shadow: 2px 2px 5px grey;
 }
-#mainmenu table {
-  width: 100%;
-  margin-bottom: 5px;
+#registerCSS {
+  margin-left: 25%;
+  margin-right: 25%;
 }
-#mainmenu table th,
-#mainmenu table td {
-  border: 1px solid #c7c7c7;
+#registerCSS h2 {
+  margin: 5px inherit;
+  text-align: center;
+}
+#registerCSS h3 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+#registerCSS div {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+#registerCSS div label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+#registerCSS div input {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+#registerCSS div input {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+#registerCSS div button {
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  background-color: #1865f2;
+  border-radius: 5px;
+}
+#registerCSS div button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
+}
+#registerCSS div #register {
+  border: none;
+  background-color: #16d920;
+}
+#registerCSS div #register:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #16d920;
+}
+#registerCSS div p {
+  font-size: 1rem;
+}
+#registerCSS .club,
+#registerCSS .contact,
+#registerCSS .password {
+  border-bottom: 1px solid gray;
 }

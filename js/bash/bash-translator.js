@@ -33,6 +33,7 @@ Bash_Language.en = {
     login: "Login",
 
     //Register
+    club: "Club",
     address: "Address",
     street: "Street",
     city: "City",
@@ -41,7 +42,8 @@ Bash_Language.en = {
     firstName: "Firstname",
     lastName: "Lastname",
     email: "Email",
-    password2: "Repeat password",
+    password: "Enter password",
+    passwordCheck: "Repeat password",
     register: "Register",
 
 
@@ -50,6 +52,32 @@ Bash_Language.en = {
 
     //Courts
     court: "Court",
+
+    //Clubsettings
+    cAdministration: "Administration",
+    cYourSettings: "Settings",
+    clubAddress: "Club Address",
+    postalCode: "Post Code",
+    openingHours: "Opening Hours",
+    hoursPerWeek: "Hours per Week",
+    maxReservations: "max. Reservations",
+
+    cYourMembers: "Your Members",
+    cName: "Name",
+    cEmail: "E-Mail",
+    cAdress: "Address",
+    cActions: "Edit",
+    cAddMember: "Add Member",
+
+    cYourCourts: "Your Courts",
+    cSurface: "Surface",
+    cAddCourt: "Add Court",
+    cClose: "Close",
+
+    cEdit: "Edit",
+    cDelete: "Delete",
+    
+
 };
 Bash_Language.de = {
     //Main
@@ -66,6 +94,7 @@ Bash_Language.de = {
     login: "Einloggen",
 
     //Register
+    club: "Club",
     address: "Adresse",
     street: "Straße",
     city: "Stadt",
@@ -74,7 +103,8 @@ Bash_Language.de = {
     firstName: "Vorname",
     lastName: "Nachname",
     email: "E-mail",
-    password2: "Passwort wiederholen",
+    password: "Passwort eingeben",
+    passwordCheck: "Passwort wiederholen",
     register: "Registrieren",
 
     //General
@@ -82,6 +112,31 @@ Bash_Language.de = {
 
     //Courts
     court : "Platz",
+
+    //Clubsettings
+    cAdministration: "Administration",
+    cYourSettings: "Einstellungen",
+    clubAddress: "Club Adresse",
+    postalCode: "Postleitzahl",
+    openingHours: "Öffnungszeiten",
+    hoursPerWeek: "Stunden pro Woche",
+    maxReservations: "max. Reservierungen",
+
+    cYourMembers: "Deine Mitglieder",
+    cName: "Name",
+    cEmail: "E-Mail",
+    cAdress: "Adresse",
+    cActions: "Bearbeiten",
+    cAddMember: "Mitglied hinzufügen",
+
+    cYourCourts: "Deine Plätze",
+    cSurface: "Oberfläche",
+    cAddCourt: "Platz hinzufügen",
+    cClose: "Beenden",
+
+    cEdit: "Bearbeiten",
+    cDelete: "Entfernen",
+
 };
 // Bash_Language.it = {
 //     //Settings

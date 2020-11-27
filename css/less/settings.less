@@ -1,31 +1,63 @@
 #settingCSS {
+    margin-left: 25%;
+    margin-right: 25%;
     h2 {
         margin: 5px inherit;
         text-align: center;
     }
     h3 {
         font-size: 1.5rem;
-        text-align: center;
+        text-align: left;
     }
-    form {
+    div {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
-        border-bottom: 1px solid gray;
         label {
             font-weight: 500;
+            font-size: 1rem;
         }
         input, select {
-            border: 1px solid rgb(204, 204, 204);
+            border: 1px solid #cccccc;
             border-radius: 5px;
         }
-        input:not(:last-of-type), select {
+        input, select {
             margin-top: 0.3rem;
             margin-bottom: 1rem;
             padding: 0.5rem;
             width: 100%;
         }
-        input:last-of-type {
-            padding: 0.7rem;
+        select {
+            width: 103%;
         }
+
+        button {
+            border: none;
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: white;
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            background-color:#1865f2;
+            border-radius: 5px;
+        }
+        button:hover {
+            cursor: pointer;
+            box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2
+        }
+        #pDeleteAccount {
+            border: none;
+            background-color: #d92916;
+        }
+        #pDeleteAccount:hover {
+            box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916
+
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .basics, .password, .role {
+        border-bottom: 1px solid gray;
     }
 }

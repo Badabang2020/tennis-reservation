@@ -79,8 +79,17 @@ export default class API {
         API.request("DeleteMember", JSON.stringify(memberId), callback);
     }
 
-    editMember(email, first_name, last_name, gender, phonenumber, password, birthday, role, callback) {
+    changeMemberPassword(membernumber, password) {
         let memberInfo = {
+            membernumber: membernumber,
+            password: password
+        };
+        API.request("ChangeMemberPassword", JSON.stringify(memberInfo), callback);
+    }
+
+    editMember(membernumber, email, first_name, last_name, gender, phonenumber, password, birthday, role, clubname, callback) {
+        let memberInfo = {
+            membernumber: membernumber,
             email: email,
             first_name: first_name,
             last_name: last_name,
@@ -89,6 +98,7 @@ export default class API {
             phonenumber: phonenumber,
             password: password,
             role: role,
+            clubname: clubname,
         }
         API.request("EditMember", JSON(memberInfo), callback)
     }
@@ -151,7 +161,8 @@ export default class API {
     static request(purpose, json, callback) {
         $.ajax({
             //url: "http://p452177.mittwaldserver.info/platzreservierung/api.php",
-            url: "http://127.0.0.1/tennis-reservation/api.php",
+            // url: "http://127.0.0.1/tennis-reservation/api.php",
+            url: "https://platzreservierung.neuwersch.eu/api.php",
             data: {
                 purpose: purpose,
                 data: json

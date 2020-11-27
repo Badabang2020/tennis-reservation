@@ -1,39 +1,34 @@
-#settingCSS {
+#registerCSS {
   margin-left: 25%;
   margin-right: 25%;
 }
-#settingCSS h2 {
+#registerCSS h2 {
   margin: 5px inherit;
   text-align: center;
 }
-#settingCSS h3 {
+#registerCSS h3 {
   font-size: 1.5rem;
   text-align: left;
 }
-#settingCSS div {
+#registerCSS div {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
 }
-#settingCSS div label {
+#registerCSS div label {
   font-weight: 500;
   font-size: 1rem;
 }
-#settingCSS div input,
-#settingCSS div select {
+#registerCSS div input {
   border: 1px solid #cccccc;
   border-radius: 5px;
 }
-#settingCSS div input,
-#settingCSS div select {
+#registerCSS div input {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
 }
-#settingCSS div select {
-  width: 103%;
-}
-#settingCSS div button {
+#registerCSS div button {
   border: none;
   font-size: 1rem;
   font-weight: bold;
@@ -43,22 +38,22 @@
   background-color: #1865f2;
   border-radius: 5px;
 }
-#settingCSS div button:hover {
+#registerCSS div button:hover {
   cursor: pointer;
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
 }
-#settingCSS div #pDeleteAccount {
+#registerCSS div #register {
   border: none;
-  background-color: #d92916;
+  background-color: #16d920;
 }
-#settingCSS div #pDeleteAccount:hover {
-  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916;
+#registerCSS div #register:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #16d920;
 }
-#settingCSS div p {
+#registerCSS div p {
   font-size: 1rem;
 }
-#settingCSS .basics,
-#settingCSS .password,
-#settingCSS .role {
+#registerCSS .club,
+#registerCSS .contact,
+#registerCSS .password {
   border-bottom: 1px solid gray;
 }
