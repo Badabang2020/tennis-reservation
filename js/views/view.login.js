@@ -8,7 +8,7 @@ export default class LoginView extends Bash_Route{
 
     init(){
         console.log("THIS IS LOGIN!!");
-        $("header")="Nicht sichtbar";
+        // $("header")="Nicht sichtbar";
         if(!window.bash.utils.getCookie("user")){
             $("#button-login-ok").unbind("click").on("click", function(){
                 let email = $("#email").val();
