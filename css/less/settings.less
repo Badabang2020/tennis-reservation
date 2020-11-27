@@ -9,18 +9,21 @@
         font-size: 1.5rem;
         text-align: left;
     }
-    div {
+    p {
+        font-size: 1rem;
+    }
+    form {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
         label {
             font-weight: 500;
             font-size: 1rem;
         }
-        input, select {
+        input:not(:last-of-type), select {
             border: 1px solid #cccccc;
             border-radius: 5px;
         }
-        input, select {
+        input:not(:last-of-type), select {
             margin-top: 0.3rem;
             margin-bottom: 1rem;
             padding: 0.5rem;
@@ -30,7 +33,7 @@
             width: 103%;
         }
 
-        button {
+        #pSaveChanges, #pChangePassword {
             border: none;
             font-size: 1.0rem;
             font-weight: bold;
@@ -40,21 +43,28 @@
             background-color:#1865f2;
             border-radius: 5px;
         }
-        button:hover {
+        #pSaveChanges:hover, #pChangePassword:hover {
             cursor: pointer;
             box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2
         }
-        #pDeleteAccount {
-            border: none;
-            background-color: #d92916;
-        }
-        #pDeleteAccount:hover {
-            box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916
+    }
+    #pDeleteAccount {
+        font-size: 1.0rem;
+        font-weight: bold;
+        color: white;
+        padding: 0.7rem;
+        margin-top: 0.5rem;
+        background-color: #d92916;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+    }
+    #pDeleteAccount:hover {
+        box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916
 
-        }
-        p {
-            font-size: 1rem;
-        }
+    }
+
+    .deleteAccount {
+        margin-bottom: 3rem;
     }
 
     .basics, .password, .role {

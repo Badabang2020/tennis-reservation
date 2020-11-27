@@ -1,53 +1,53 @@
 <div id="settingCSS">
-    <h2>Profil Settings</h2>
+    <h2><%>pProfilSettings<%></h2>
 
-    <h3>Basics</h3>
-    <div class="basics">
-        <label>Firstname</label><br>
-        <input id="pFirstname" type="text" name="firstname"><br>
+    <h3><%>pBasics<%></h3>
+    <form class="basics">
+        <label><%>firstName<%></label><br>
+        <input id="pFirstname" type="text" name="firstname" required><br>
 
-        <label>Lastname</label><br>
-        <input id="pLastname" type="text" name="lastname"><br>
+        <label><%>lastName<%></label><br>
+        <input id="pLastname" type="text" name="lastname" required><br>
 
-        <label>E-Mail</label><br>
-        <input id="pEmail" type="email" name="phoneNumber"><br>
+        <label><%>email<%></label><br>
+        <input id="pEmail" type="email" name="email" required><br>
 
-        <label>Phone number</label><br>
-        <input id="pPhoneNumber" type="text" name="phoneNumber"><br>
+        <label><%>pPhoneNumber<%></label><br>
+        <input id="pPhoneNumber" type="text" name="phoneNumber" required><br>
 
-        <label>Gender</label><br>
+        <label><%>pGender<%></label><br>
         <select id="pGender">
-            <option value="f">f</option>
-            <option value="m">m</option>
+            <option value="f"><%>pf<%></option>
+            <option value="m"><%>pm<%></option>
         </select><br>
 
-        <label>Birthdate</label><br>
-        <input id="pBirthday" type="date" name="birthdate"><br>
+        <label><%>pBirthdate<%></label><br>
+        <input id="pBirthday" type="date" name="birthdate" required><br>
 
-        <button id="pSaveChanges">Save changes</button>
-    </div>
+        <input type="submit" id="pSaveChanges" value="<%>pSaveChanges<%>"></input>
+    </form>
 
-    <h3>Password</h3>
-    <div class="password">
-        <label>Current password</label><br>
-        <input id="pCurrentPassword" type="text" name="currentPassword"><br>
+    <h3><%>password<%></h3>
+    <form class="password">
+        <label><%>pCurrentPassword<%></label><br>
+        <input id="pCurrentPassword" type="text" name="currentPassword" required><br>
 
-        <label>New password</label><br>
-        <input id="pNewPassword" type="password" name="newPassword"><br>
+        <label><%>pNewPassword<%></label><br>
+        <input id="pNewPassword" type="password" name="newPassword" required><br>
 
-        <label>Re-enter new password</label><br>
-        <input id="pNewPassword2" type="password" name="re-enterNewPassword"><br>
+        <label><%>pReEnterNewPassword<%></label><br>
+        <input id="pNewPassword2" type="password" name="re-enterNewPassword" required><br>
 
-        <button id="pChangePassword">Change password</button>
-    </div>
+        <input type="submit" id="pChangePassword" value="<%>pChangePassword<%>"></input>
+    </form>
 
-    <h3>Role</h3>
+    <h3><%>pRole<%></h3>
     <div class="role">
-        <p id="pRole">Knecht<p>
+        <p id="pRole"><%>pKnecht<%><p>
     </div>
 
-    <h3>Delete Account</h3>
+    <h3><%>pDeleteAccount<%></h3>
     <div class="deleteAccount">
-        <button id="pDeleteAccount">Delete your account</button>
+        <button id="pDeleteAccount"><%>pDeleteYyourAccount<%></button>
     </div>
 </div>
