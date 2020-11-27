@@ -1,66 +1,43 @@
- <div class="register">
+ <div id="registerCSS">
+    <h2><%>register<%></h2>
+
+    <h3><%>club<%></h3>   
+    <div class="club">
+            <label for="clubname">Clubname:</label><br>
+            <input type="text" id="clubname" name="clubname" placeholder="Clubname" required><br>
+
+            <label for="streetName"><%>street<%>:</label><br>
+            <input type="text" id="streetName" name="streetName" placeholder="Musterstraße 5" required><br>
+
+            <label for="city"><%>city<%>:</label><br>
+            <input type="text" id="city" name="city" placeholder="Linz" required><br>
+
+            <label for="postcode"><%>postcode<%>:</label><br>
+            <input type="text" id="postcode" name="postcode" placeholder="4020" required><br>
+  
+        <h3><%>contact<%>:</h2>
+        <div class="contact">
+                <label for="firstName"><%>firstName<%>:</label><br>
+                <input type="text" id="firstName" name="firstName" placeholder="Franz/Sissi" required><br>
+            
+                <label for="lastName"><%>lastName<%>:</label><br>
+                <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required><br>
+        
+                <label for="email"><%>email<%>:</label><br>
+                <input type="email" id="email" name="email" placeholder="franz@gmail.com" required><br>
     
-    <div class="registerForm">
-        <div class="row">       
-        <h2>Club</h2>
-        </div>
-        <div class="row">
-            <label for="clubname">Clubname:</label>
-            <input type="text" id="clubname" name="clubname" placeholder="Clubname" required>
-        </div>
-        
-
---------------------------------------------------------------------------------------------------------------------------------- 
-        <div class="row">       
-        <h2><%>address<%></h2>
-        </div>
-        <div class="row">
-            <label for="streetName"><%>street<%>:</label>
-            <input type="text" id="streetName" name="streetName" placeholder="Musterstraße 5" required>
-        </div>
-        <div class="row">
-            <label for="city"><%>city<%>:</label>
-            <input type="text" id="city" name="city" placeholder="Linz" required>
-        </div>
-        <div class="row">
-            <label for="postcode"><%>postcode<%>:</label>
-            <input type="text" id="postcode" name="postcode" placeholder="4020" required>
+            <div class="password">
+                <label for="password"><%>password<%>:</label><br>
+                <input type="password" id="password" name="username" placeholder="******" required><br>
+            
+                <label for="passwordCheck"><%>passwordCheck<%>:</label><br>
+                <input type="password" id="passwordCheck" name="passwordCheck" placeholder="******" required><br>
+            </div>
         </div>
 
----------------------------------------------------------------------------------------------------------------------------------
-        <div class="row">
-        <h2><%>contact<%>:</h2>
+        <div class="registerAccount">
+            <button  id="register" name="register"><%>register<%></button>
+            <button  id="registerCancel" name="cancel"><%>cancel<%></button>
         </div>
-        <div class="row">
-            <label for="firstName"><%>firstName<%>:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Franz/Sissi" required>
-        </div>
-
-        <div class="row">
-            <label for="lastName"><%>lastName<%>:</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required>
-        </div>
-        
-        <div class="row">
-            <label for="email"><%>email<%>:</label>
-            <input type="email" id="email" name="email" placeholder="franz@gmail.com" required>
-        </div>
-
-        <div class="row">
-            <label for="password"><%>password<%>:</label>
-            <input type="password" id="password" name="username" placeholder="******" required>
-        </div>
-
-        <div class="row">
-            <label for="passwordCheck"><%>password2<%>:</label>
-            <input type="password" id="passwordCheck" name="passwordCheck" placeholder="******" required>
-        </div>
----------------------------------------------------------------------------------------------------------------------------------
-
-        <div class="row row-right">
-            <button  id="registerBtn" name="register"><%>register<%></button>
-            <button  id="registerBtnCancel" name="cancel"><%>cancel<%></button>
-        </div>
-
     </div>
 </div>
