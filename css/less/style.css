@@ -1,0 +1,265 @@
+header nav {
+  display: flex;
+  margin: 2rem 0;
+  height: 2rem;
+  flex-grow: 0;
+  justify-content: space-between;
+  background-color: darkgrey;
+  padding: 0.6rem;
+}
+header nav img {
+  flex: 1;
+  transform: translate(5%, -33%);
+  height: fit-content;
+}
+header nav .buttonBox {
+  flex: 9;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav .buttonBox button {
+  padding: 0.5em 1em;
+  margin-left: 1rem;
+  background: #26a697;
+  border-width: 1px;
+  border-color: #26a697;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  outline: none;
+}
+header nav .buttonBox button:hover {
+  background-color: #31d1be;
+  box-shadow: 0 0 5px #292929;
+}
+header nav .buttonBox #usersettings {
+  position: relative;
+}
+header nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 2rem;
+  border-radius: 3px;
+}
+header nav .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #31d1be;
+  cursor: pointer;
+}
+header nav .dropdown-content a:hover {
+  background-color: #28b1a1;
+}
+header nav .show {
+  display: block;
+}
+#loginSite {
+  font: inherit;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  vertical-align: baseline;
+  height: 100%;
+  line-height: 1;
+  overflow: visible;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+#loginSite .login {
+  min-height: 95vh;
+  margin-bottom: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  place-content: stretch center;
+  overflow: visible;
+}
+#loginSite .login .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 170px;
+  margin-top: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+#loginSite .login .image img {
+  height: 32px;
+  width: 32px;
+}
+#loginSite .login .login-section {
+  max-width: 350px;
+  position: relative;
+  width: initial;
+  opacity: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  place-content: stretch flex-start;
+  overflow: visible;
+  flex-grow: 1;
+  width: 100%;
+}
+#loginSite .login h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  color: #333333;
+  margin-bottom: 24px;
+}
+#loginSite .login label {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+}
+#loginSite .login input {
+  width: 100%;
+  height: 3rem;
+  box-sizing: border-box;
+  padding: 18.5px 14px;
+  margin-bottom: 16px;
+  border: 1px solid grey;
+}
+#loginSite .login #passwordForget {
+  margin-bottom: 16px;
+}
+#loginSite .login a {
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+#loginSite .login button {
+  background-color: #21a696;
+  color: #fff;
+  width: 100%;
+  height: 48px;
+  font-weight: bold;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+#loginSite .login button:hover {
+  background-color: #177469;
+}
+#loginSite .picture {
+  max-width: 50%;
+  background: url(images/tennis-img.jpg) 70% 0;
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  place-content: stretch flex-start;
+  height: 758px;
+  width: 695px;
+  flex-grow: 0;
+}
+#settingCSS {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+#settingCSS h2 {
+  margin: 5px inherit;
+  text-align: center;
+}
+#settingCSS h3 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+#settingCSS div {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+#settingCSS div label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+#settingCSS div input,
+#settingCSS div select {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+#settingCSS div input,
+#settingCSS div select {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+#settingCSS div select {
+  width: 103%;
+}
+#settingCSS div button {
+  border: none;
+  font-size: 1.0rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  background-color: #1865f2;
+  border-radius: 5px;
+}
+#settingCSS div button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
+}
+#settingCSS div #pDeleteAccount {
+  border: none;
+  background-color: #d92916;
+}
+#settingCSS div #pDeleteAccount:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916;
+}
+#settingCSS div p {
+  font-size: 1rem;
+}
+#settingCSS .basics,
+#settingCSS .password,
+#settingCSS .role {
+  border-bottom: 1px solid gray;
+}
+/*****************************************************
+* Styling the main window
+*****************************************************/
+#mainmenu {
+  margin: 0 12rem;
+}
+#mainmenu .header {
+  line-height: 0.4rem;
+  margin-bottom: 2rem;
+}
+#mainmenu .header h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px 5px grey;
+}
+#mainmenu .header h3 {
+  text-align: center;
+  text-shadow: 2px 2px 5px grey;
+}
+/*# sourceMappingURL=style.css.map */
