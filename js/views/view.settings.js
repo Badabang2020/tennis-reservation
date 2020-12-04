@@ -30,19 +30,19 @@ export default class SettingsView extends Bash_Route {
             // edit Basic values
             $("#pSaveChanges").unbind("click").on("click", function(e){
                 e.preventDefault();
-                this.changeMemberBasic(membernumber, role, clubname);
+                SettingsView.changeMemberBasic(membernumber, role, clubname);
             });
 
             // change password
             $("#pChangePassword").unbind("click").on("click", function(e){
                 e.preventDefault();
-                this.changeMemberPassword(membernumber);
+                SettingsView.changeMemberPassword(membernumber);
             });
 
 
             // delete user
             $("#pDeleteAccount").unbind("click").on("click", function(){
-                this.deleteMember(membernumber);
+                SettingsView.deleteMember(membernumber);
             });
         }
         else
