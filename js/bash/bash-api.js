@@ -79,7 +79,7 @@ export default class API {
         API.request("DeleteMember", JSON.stringify(memberId), callback);
     }
 
-    changeMemberPassword(membernumber, password) {
+    changeMemberPassword(membernumber, password, callback) {
         let memberInfo = {
             membernumber: membernumber,
             password: password
@@ -99,7 +99,7 @@ export default class API {
             role: role,
             clubname: clubname,
         }
-        API.request("EditMember", JSON(memberInfo), callback)
+        API.request("EditMember", JSON.stringify(memberInfo), callback)
     }
 
     getMembersOfClub(clubname, callback) {

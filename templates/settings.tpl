@@ -13,7 +13,7 @@
         <input id="pEmail" type="email" name="email" required><br>
 
         <label><%>pPhoneNumber<%></label><br>
-        <input id="pPhoneNumber" type="text" name="phoneNumber" required><br>
+        <input id="pPhoneNumber" type="text" name="phoneNumber"><br>
 
         <label><%>pGender<%></label><br>
         <select id="pGender">

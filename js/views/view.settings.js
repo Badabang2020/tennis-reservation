@@ -30,19 +30,51 @@ export default class SettingsView extends Bash_Route {
             // edit Basic values
             $("#pSaveChanges").unbind("click").on("click", function(e){
                 e.preventDefault();
-                SettingsView.changeMemberBasic(membernumber, role, clubname);
+                firstname = $("#pFirstname").val();
+                lastname = $("#pLastname").val();
+                gender = $("#pGender").val();
+                phoneNumber = $("#pPhoneNumber").val();
+                email = $("#pEmail").val();
+                birthdate = $("#pBirthday").val();
+                window.bash.api.editMember(membernumber, email, firstname, lastname, gender, phoneNumber, birthdate, role, clubname, function(mysqlResult){
+                    console.log(mysqlResult);
+                });
             });
 
             // change password
             $("#pChangePassword").unbind("click").on("click", function(e){
                 e.preventDefault();
-                SettingsView.changeMemberPassword(membernumber);
+                let currentPassword = $("#pCurrentPassword").val();
+                let newPassword = $("#pNewPassword").val();
+                let newPassword2 = $("#pNewPassword2").val();
+        
+                window.bash.api.login(email, currentPassword, function(mysqlResult) {
+                    if(mysqlResult !== "noMatch") {
+                        if (newPassword === newPassword2) {
+                            window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
+                                $("#pCurrentPassword").val("");
+                                $("#pNewPassword").val("");
+                                $("#pNewPassword2").val("");
+                                console.log(mysqlResult);
+                            });
+                        }
+                        else {
+                            alert('new Pasword are not the same');
+                        }
+                    }
+                    else {
+                        alert('current Password is false');
+                    }
+                });
             });
 
 
             // delete user
             $("#pDeleteAccount").unbind("click").on("click", function(){
-                SettingsView.deleteMember(membernumber);
+                window.bash.api.deleteMember(membernumber, function(mysqlResult) {
+                    window.bash.utils.setCookie("user", mysqlResult, -1);
+                    window.location.hash = "/";
+                });
             });
         }
         else
@@ -62,47 +94,15 @@ export default class SettingsView extends Bash_Route {
         $("#pRole").html(role);
     }
 
-    changeMemberBasic(membernumber, role, clubname) {
-        firstname = $("#pFirstname").val();
-        lastname = $("#pLastname").val();
-        gender = $("#pGender").val();
-        phoneNumber = $("#pPhoneNumber").val();
-        email = $("#pEmail").val();
-        birthdate = $("#pBirthday").val();
-        window.bash.api.editMember(membernumber, email, firstname, lastname, gender, phoneNumber, birthdate, role, clubname, function(mysqlResult){
-            console.log(mysqlResult);
-        });
-    }
+    // changeMemberBasic(membernumber, role, clubname) {
 
-    changeMemberPassword(membernumber) {
-        let currentPassword = $("#pCurrentPassword").val();
-        let newPassword = $("#pNewPassword").val();
-        let newPassword2 = $("#pNewPassword2").val();
+    // }
 
-        window.bash.api.login(email, currentPassword, function(mysqlResult) {
-            if(mysqlResult !== "noMatch") {
-                if (newPassword === newPassword2) {
-                    window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
-                        $("#pCurrentPassword").val("");
-                        $("#pNewPassword").val("");
-                        $("#pNewPassword2").val("");
-                        console.log(mysqlResult);
-                    });
-                }
-                else {
-                    alert('new Pasword are not the same');
-                }
-            }
-            else {
-                alert('current Password is false');
-            }
-        });
-    }
+    // changeMemberPassword(membernumber) {
 
-    deleteMember(membernumber) {
-        window.bash.api.deleteMember(membernumber, function(mysqlResult) {
-            window.bash.utils.setCookie("user", mysqlResult, -1);
-            window.location.hash = "/";
-        });
-    }
+    // }
+
+    // deleteMember(membernumber) {
+
+    // }
 }
