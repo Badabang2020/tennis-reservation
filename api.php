@@ -84,7 +84,7 @@ if (isset($_REQUEST["purpose"])) {
         case "DeleteReservation":
             deleteReservation();
             break;
-        case "GetRervation":
+        case "GetReservation":
             getReservation();
             break;
         case "GetReservationsOfClub":
@@ -286,10 +286,15 @@ function getReservation()
 
 function getReservationsOfClub()
 {
-    $query = "SELECT * FROM reservation WHERE clubname = '" . $GLOBALS['data']->clubname . "'";
+    $query = "SELECT * FROM reservation JOIN court ON reservation.courtid = court.courtid WHERE clubname = '" . $GLOBALS['data']->clubname . "'";
     $club = $GLOBALS['connection']->query($query);
     if ($club)
-        die(json_encode($club->fetch_assoc()));
+        if ($club->num_rows > 0){
+            for ($i = 0; $i < $club->num_rows; $i++){
+                $reservationData[$i] = $club->fetch_assoc();
+            }
+            die(json_encode($reservationData));
+        }
     else
         die(false);
 }
