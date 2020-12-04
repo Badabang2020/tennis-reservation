@@ -18,7 +18,7 @@ export default class SettingsView extends Bash_Route {
             let firstname = userData.first_name;
             let lastname = userData.last_name;
             let gender = userData.gender;
-            let birthdate = userData.birthdate;
+            let birthdate = userData.birthday;
             let phoneNumber = userData.phonenumber;
             let email = userData.email;
             let role = userData.role;
@@ -62,7 +62,7 @@ export default class SettingsView extends Bash_Route {
         $("#pRole").html(role);
     }
 
-    changeMemberBasic() {
+    changeMemberBasic(role, clubname) {
         firstname = $("#pFirstname").val();
         lastname = $("#pLastname").val();
         gender = $("#pGender").val();
