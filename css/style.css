@@ -191,30 +191,34 @@ header nav .show {
   font-size: 1.5rem;
   text-align: left;
 }
-#settingCSS div {
+#settingCSS p {
+  font-size: 1rem;
+}
+#settingCSS form {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
 }
-#settingCSS div label {
+#settingCSS form label {
   font-weight: 500;
   font-size: 1rem;
 }
-#settingCSS div input,
-#settingCSS div select {
+#settingCSS form input:not(:last-of-type),
+#settingCSS form select {
   border: 1px solid #cccccc;
   border-radius: 5px;
 }
-#settingCSS div input,
-#settingCSS div select {
+#settingCSS form input:not(:last-of-type),
+#settingCSS form select {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
 }
-#settingCSS div select {
+#settingCSS form select {
   width: 103%;
 }
-#settingCSS div button {
+#settingCSS form #pSaveChanges,
+#settingCSS form #pChangePassword {
   border: none;
   font-size: 1rem;
   font-weight: bold;
@@ -224,19 +228,26 @@ header nav .show {
   background-color: #1865f2;
   border-radius: 5px;
 }
-#settingCSS div button:hover {
+#settingCSS form #pSaveChanges:hover,
+#settingCSS form #pChangePassword:hover {
   cursor: pointer;
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1865f2;
 }
-#settingCSS div #pDeleteAccount {
-  border: none;
+#settingCSS #pDeleteAccount {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
   background-color: #d92916;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
 }
-#settingCSS div #pDeleteAccount:hover {
+#settingCSS #pDeleteAccount:hover {
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #d92916;
 }
-#settingCSS div p {
-  font-size: 1rem;
+#settingCSS .deleteAccount {
+  margin-bottom: 3rem;
 }
 #settingCSS .basics,
 #settingCSS .password,
@@ -328,4 +339,7 @@ header nav .show {
 #registerCSS .contact,
 #registerCSS .password {
   border-bottom: 1px solid gray;
+}
+td.reserved{
+  background-color: pink;
 }

@@ -1,13 +1,13 @@
 <?php
-$servername = "db1552.mydbserver.com";
-$username = "p452177d1";
-$password = "oa6O8g,6movs";
-$dbname = "usr_p452177_4";
+  $servername = "db1552.mydbserver.com";
+  $username = "p452177d1";
+  $password = "oa6O8g,6movs";
+  $dbname = "usr_p452177_4";
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "12345678";
-// $dbname = "usr_p452177_4";
+//$servername = "localhost";
+//$username = "root";
+//$password = "";
+//$dbname = "usr_p452177_4";
 
 
 $GLOBALS['connection'] = new mysqli($servername, $username, $password, $dbname);
@@ -145,11 +145,12 @@ function getClub()
 // ---------------------------- Member Begin ----------------------------
 function registerMember()
 {
-    $gender = $GLOBALS["data"]->gender || "m";
-    $birthday = $GLOBALS["data"]->birthday || "1990-01-01";
-    $phonenumber = $GLOBALS["data"]->phonenumber || "";
+    $gender = empty($GLOBALS["data"]->gender) ? "m" : $GLOBALS["data"]->gender;
+    $birthday = empty($GLOBALS["data"]->birthday) ? "1990-01-01" : $GLOBALS["data"]->birthday;
+    $phonenumber = empty($GLOBALS["data"]->phonenumber) ? "" : $GLOBALS["data"]->phonenumber;
+
     $query = "INSERT INTO member (first_name, last_name, gender, birthday, phonenumber, email, password, role, clubname) 
-    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $gender . "','" . $birthday . "','" . $phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "'," . $GLOBALS['data']->role . ",'" . $GLOBALS['data']->clubname . "');";
+    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $gender . "','" . $birthday . "','" . $phonenumber . "','" . $GLOBALS['data']->email . "','" . sha1($GLOBALS['data']->password) . "','" . $GLOBALS['data']->role . "','" . $GLOBALS['data']->clubname . "');";
     $result = $GLOBALS['connection']->query($query);
     die($result ? json_encode($GLOBALS['connection']->insert_id) : "Could not register member");
 }

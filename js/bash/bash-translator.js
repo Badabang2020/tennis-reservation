@@ -77,7 +77,23 @@ Bash_Language.en = {
     cEdit: "Edit",
     cDelete: "Delete",
     
-
+    //Membersettings
+    pProfilSettings: 'Profil Settings',
+    pBasics: 'Basics',
+    pPhoneNumber: 'Phone number',
+    pGender: 'Gender',
+    pf: 'f',
+    pm: 'm',
+    pBirthdate: 'Birthdate',
+    pSaveChanges: 'Save changes',
+    pCurrentPassword: 'Current password',
+    pNewPassword: 'New Passowrd',
+    pReEnterNewPassword: 'Re-enter New Password',
+    pChangePassword: 'Change password',
+    pRole: 'Role',
+    pKnecht: 'Servant',
+    pDeleteAccount: 'Delete Account',
+    pDeleteYyourAccount: 'Delete your account',
 };
 Bash_Language.de = {
     //Main
@@ -136,6 +152,24 @@ Bash_Language.de = {
 
     cEdit: "Bearbeiten",
     cDelete: "Entfernen",
+
+    //Membersettings
+    pProfilSettings: 'Profil Einstellung',
+    pBasics: 'Grundlagen',
+    pPhoneNumber: 'Telefonnummer',
+    pGender: 'Geschlecht',
+    pf: 'w',
+    pm: 'm',
+    pBirthdate: 'Geburtstag',
+    pSaveChanges: 'Änderungen speichern',
+    pCurrentPassword: 'derzeitiges Passwort',
+    pNewPassword: 'neues Passwort',
+    pReEnterNewPassword: 'neues Passwort erneut',
+    pChangePassword: 'Password ändern',
+    pRole: 'Rolle',
+    pKnecht: 'Knecht',
+    pDeleteAccount: 'Lösche Account',
+    pDeleteYyourAccount: 'Lösche deinen Account',
 
 };
 // Bash_Language.it = {

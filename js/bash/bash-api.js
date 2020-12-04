@@ -30,15 +30,16 @@ export default class API {
         };
         let self = this;
         API.request("RegisterClub", JSON.stringify(clubInfo), function (data) {
+            console.warn("This should happen first");
             if (data != "Could not register club")
                 self.registerMember(email, first_name, last_name, password, "admin", clubname, callback);
         });
     }
 
-    editClub(clubname, adress, postcode, logo, hoursAtOnce, hoursPerWeek, openFrom, openUntil, daysBefore, callback) {
+    editClub(clubname, address, postcode, logo, hoursAtOnce, hoursPerWeek, openFrom, openUntil, daysBefore, callback) {
         let clubInfo = {
             clubname: clubname,
-            adress: adress,
+            address: address,
             postcode: postcode,
             logo: logo,
             hoursAtOnce: hoursAtOnce,
@@ -57,18 +58,17 @@ export default class API {
         API.request("GetClub", JSON.stringify(club), callback);
     }
     /////////////////////// Member Functions ///////////////////////////////
-    registerMember(email, first_name, last_name, gender, birthday, phonenumber, password, role, clubname, callback) {
+    registerMember(email, first_name, last_name, password, role, clubname, callback) {
+        console.warn("This should happen at next");
         let memberInfo = {
             email: email,
             first_name: first_name,
             last_name: last_name,
-            gender: gender,
-            birthday: birthday,
-            phonenumber: phonenumber,
             password: password,
             role: role,
             clubname: clubname
         };
+        console.log(memberInfo);
         API.request("RegisterMember", JSON.stringify(memberInfo), callback);
     }
 
@@ -79,7 +79,7 @@ export default class API {
         API.request("DeleteMember", JSON.stringify(memberId), callback);
     }
 
-    changeMemberPassword(membernumber, password) {
+    changeMemberPassword(membernumber, password, callback) {
         let memberInfo = {
             membernumber: membernumber,
             password: password
@@ -87,7 +87,7 @@ export default class API {
         API.request("ChangeMemberPassword", JSON.stringify(memberInfo), callback);
     }
 
-    editMember(membernumber, email, first_name, last_name, gender, phonenumber, password, birthday, role, clubname, callback) {
+    editMember(membernumber, email, first_name, last_name, gender, phonenumber, birthday, role, clubname, callback) {
         let memberInfo = {
             membernumber: membernumber,
             email: email,
@@ -96,11 +96,10 @@ export default class API {
             gender: gender,
             birthday: birthday,
             phonenumber: phonenumber,
-            password: password,
             role: role,
             clubname: clubname,
         }
-        API.request("EditMember", JSON(memberInfo), callback)
+        API.request("EditMember", JSON.stringify(memberInfo), callback)
     }
 
     getMembersOfClub(clubname, callback) {
