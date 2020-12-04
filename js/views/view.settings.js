@@ -30,7 +30,7 @@ export default class SettingsView extends Bash_Route {
             // edit Basic values
             $("#pSaveChanges").unbind("click").on("click", function(e){
                 e.preventDefault();
-                this.changeMemberBasic(role, clubname);
+                this.changeMemberBasic(membernumber, role, clubname);
             });
 
             // change password
@@ -62,7 +62,7 @@ export default class SettingsView extends Bash_Route {
         $("#pRole").html(role);
     }
 
-    changeMemberBasic(role, clubname) {
+    changeMemberBasic(membernumber, role, clubname) {
         firstname = $("#pFirstname").val();
         lastname = $("#pLastname").val();
         gender = $("#pGender").val();
