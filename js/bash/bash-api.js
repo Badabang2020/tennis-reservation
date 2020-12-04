@@ -189,28 +189,28 @@ export default class API {
             membernumber: membernumber, 
             activ: activ
         }
-        API.request("editReservation", JSON.stringify(reservationInfo), callback);
+        API.request("EditReservation", JSON.stringify(reservationInfo), callback);
     }
     
     removeReservation(reservationnumber, callback){
         let reservationInfo = {
             reservationnumber: reservationnumber
         }
-        API.request("deleteReservation", JSON.stringify(reservationInfo), callback);
+        API.request("DeleteReservation", JSON.stringify(reservationInfo), callback);
     }
 
     getReservation(reservationnumber, callback){
         let reservationInfo = {
             reservationnumber: reservationnumber
         }
-        API.request("getReservation", JSON.stringify(reservationInfo), callback);
+        API.request("GetReservation", JSON.stringify(reservationInfo), callback);
     }
 
     getReservationOfClub(clubname, callback){
         let reservationInfo = {
             clubname: clubname
         }
-        API.request("getReservationOfClub", JSON.stringify(reservationInfo), callback);
+        API.request("GetReservationsOfClub", JSON.stringify(reservationInfo), callback);
     }
 
 

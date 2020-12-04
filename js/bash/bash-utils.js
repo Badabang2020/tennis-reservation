@@ -117,5 +117,11 @@ class Bash_Utils{
         return money.toLocaleString('de-DE', options);
     };
 
+    dateFormatter(dateUS) {
+        let day = dateUS.substring(dateUS.length, dateUS.lastIndexOf('-')+1);
+        let month = dateUS.substring(dateUS.lastIndexOf('-'), dateUS.indexOf('-')+1);
+        let year = dateUS.substring(0, dateUS.indexOf('-'));
+        return ''+day+'.'+month+'.'+year+'';
+    }
 }
 export default Bash_Utils;
