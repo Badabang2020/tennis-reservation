@@ -164,6 +164,57 @@ export default class API {
         API.request("getCourt", JSON.stringify(courtInfo), callback);
     }
 
+    /////////////////////// reservations-functions/////////////////////////////////
+
+    addReservation(reservedFrom, reservedUntil, date, reservationstype, courtid, membernumber, activ, callback){
+        let reservationInfo = {
+            reservedFrom: reservedFrom, 
+            reservedUntil: reservedUntil, 
+            date: date, 
+            reservationstype: reservationstype, 
+            courtid: courtid, 
+            membernumber: membernumber, 
+            activ: activ
+        }
+        API.request("AddReservation", JSON.stringify(reservationInfo), callback);
+    }
+
+    editReservation(reservedFrom, reservedUntil, date, reservationstype, courtid, membernumber, activ, callback){
+        let reservationInfo = {
+            reservedFrom: reservedFrom, 
+            reservedUntil: reservedUntil, 
+            date: date, 
+            reservationstype: reservationstype, 
+            courtid: courtid, 
+            membernumber: membernumber, 
+            activ: activ
+        }
+        API.request("editReservation", JSON.stringify(reservationInfo), callback);
+    }
+    
+    removeReservation(reservationnumber, callback){
+        let reservationInfo = {
+            reservationnumber: reservationnumber
+        }
+        API.request("deleteReservation", JSON.stringify(reservationInfo), callback);
+    }
+
+    getReservation(reservationnumber, callback){
+        let reservationInfo = {
+            reservationnumber: reservationnumber
+        }
+        API.request("getReservation", JSON.stringify(reservationInfo), callback);
+    }
+
+    getReservationOfClub(clubname, callback){
+        let reservationInfo = {
+            clubname: clubname
+        }
+        API.request("getReservationOfClub", JSON.stringify(reservationInfo), callback);
+    }
+
+
+
     /////////////////////// API request ///////////////////////////////
     static request(purpose, json, callback) {
         $.ajax({
