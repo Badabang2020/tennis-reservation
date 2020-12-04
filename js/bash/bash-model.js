@@ -25,4 +25,16 @@ export default class Bash_Model {
         })
     }
 
+
+    // get Courts of the club
+    getCourtsOfClub(callback){
+        let self = this;
+        window.bash.api.getCourtsOfClub(this.clubname,function(courts){
+            self.courts = courts;
+            console.log("Courts:"+self.courts);
+            callback(courts);
+        })
+    }
+
+
 }

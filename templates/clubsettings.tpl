@@ -43,16 +43,8 @@
           <th><%>cActions<%></th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-        <td>cell1_1</td>
-        <td>cell2_1</td>
-        <td>cell3_1</td>
-        <td>
-          <button id="clubadmin__addcourt"><%>cEdit<%></button>
-          <button id="clubadmin__deletecourt"><%>cDelete<%></button>
-        </td>
-        </tr>
+      <tbody id="club-settings-clourts-table-body">
+        
       </tbody>
     </table>
     <button id="clubadmin__addcourt"><%>cAddCourt<%></button>
