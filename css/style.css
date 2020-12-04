@@ -340,3 +340,6 @@ header nav .show {
 #registerCSS .password {
   border-bottom: 1px solid gray;
 }
+td.reserved{
+  background-color: pink;
+}

@@ -38,6 +38,7 @@ export default class MainMenuView extends Bash_Route {
                     self.renderTable(date, club);
                     date.setDate(date.getDate() + 1);
                 }
+                self.renderReservations();
             }
         });
     }
@@ -50,7 +51,7 @@ export default class MainMenuView extends Bash_Route {
                 let startHour = Number(club.openFrom);
                 let endHour = Number(club.openUntil);
 
-                let table = "<table><tr>";
+                let table = "<table data-date='" + ((date.substring(0, date.indexOf('.')).length > 1)? '' : '0' )+ date + "'><tr>";
                 // Creating tableheader (times)
                 table += "<th>" + date + "</th>";
                 for (let hour = startHour; hour <= endHour; hour++)
@@ -58,12 +59,27 @@ export default class MainMenuView extends Bash_Route {
                 // Creating tabledata
                 table += "</tr>";
                 for (const [key, value] of Object.entries(courtArr)) {
-                    table += "<tr><td>" + value.name + "</td>";
+                    table += "<tr class='court_" + value.courtid + "'><td>" + value.name + "</td>";
                     for (let hour = startHour; hour <= endHour; hour++)
-                        table += "<td>" + "COVID" + "</td>";
+                        table += "<td class='hour_"+ hour +"'>" + "free" + "</td>";
                 }
                 table += "</tr></table>";
                 $(".maincontent").append(table);
+            }
+        });
+    }
+
+    renderReservations(){
+        window.bash.api.getReservationOfClub(JSON.parse(window.bash.utils.getCookie("user")).clubname, function(result){
+            console.log(JSON.parse(result));
+            let reservations = JSON.parse(result);
+            for (const [key, value] of Object.entries(reservations)){
+                let EUdate = window.bash.utils.dateFormatter(value.date);
+                console.log(value);
+                for (let i = Number.parseInt(value.reservedFrom); i < Number.parseInt(value.reservedUntil); i++){
+                    $('table[data-date="'+EUdate+'"] .court_'+value.courtid+' .hour_'+i).addClass('reserved');
+                    console.log('table[data-date="'+EUdate+'] .court_'+value.courtid+' .hour_'+i);
+                }
             }
         });
     }
