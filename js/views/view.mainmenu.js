@@ -50,7 +50,7 @@ export default class MainMenuView extends Bash_Route {
                 let startHour = Number(club.openFrom);
                 let endHour = Number(club.openUntil);
 
-                let table = "<table><tr>";
+                let table = "<table id='" + date + "'><tr>";
                 // Creating tableheader (times)
                 table += "<th>" + date + "</th>";
                 for (let hour = startHour; hour <= endHour; hour++)
@@ -58,13 +58,25 @@ export default class MainMenuView extends Bash_Route {
                 // Creating tabledata
                 table += "</tr>";
                 for (const [key, value] of Object.entries(courtArr)) {
-                    table += "<tr><td>" + value.name + "</td>";
+                    table += "<tr class='" + value.name + "'><td>" + value.name + "</td>";
                     for (let hour = startHour; hour <= endHour; hour++)
-                        table += "<td>" + "COVID" + "</td>";
+                        table += "<td class='"+ hour +"'>" + "free" + "</td>";
                 }
                 table += "</tr></table>";
                 $(".maincontent").append(table);
+
+                renderReservations();
             }
+        });
+    }
+
+    renderReservations(){
+        window.bash.api.getReservationsOfClub(JSON.parse(window.bash.utils.getCookie("user")).clubname, function(result){
+            console.log(result);
+            let reservations = JSON.parse(result);
+            reservations.foreach(function(reservation){
+                
+            })
         });
     }
 }
