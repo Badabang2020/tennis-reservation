@@ -51,7 +51,7 @@ export default class MainMenuView extends Bash_Route {
                 let startHour = Number(club.openFrom);
                 let endHour = Number(club.openUntil);
 
-                let table = "<table data-date='" + ((date.substring(0, date.indexOf('.')).length > 1)? '' : '0' )+ date + "'><tr>";
+                let table = "<table data-date='" + date + "'><tr>";
                 // Creating tableheader (times)
                 table += "<th>" + date + "</th>";
                 for (let hour = startHour; hour <= endHour; hour++)
@@ -78,7 +78,7 @@ export default class MainMenuView extends Bash_Route {
                 console.log(value);
                 for (let i = Number.parseInt(value.reservedFrom); i < Number.parseInt(value.reservedUntil); i++){
                     $('table[data-date="'+EUdate+'"] .court_'+value.courtid+' .hour_'+i).addClass('reserved');
-                    console.log('table[data-date="'+EUdate+'] .court_'+value.courtid+' .hour_'+i);
+                    console.log('table[data-date="'+EUdate+'] .court_' + value.courtid+' .hour_' + i);
                 }
             }
         });
