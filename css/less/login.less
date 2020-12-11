@@ -1,21 +1,14 @@
 @buttoncolor:#21a696;
 
+.hiddenHeader{
+    display: none;
+}
+
 #loginSite{
     font: inherit;
-    border: 0;
-    margin: 0;
-    padding: 0;
     font-size: 16px;
-    vertical-align: baseline;
-    height: 100%;
     line-height: 1;
-    overflow: visible;
-    width: 100%;
-    flex-grow: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-
+    justify-content: space-around;
 
         .login{
             min-height: 95vh;
@@ -121,15 +114,16 @@
 
     .picture{
         max-width: 50%;
-        background: url(./images/tennis-img.jpg) 70% 0;
+        background: url(./images/tennis-img.jpg);
         background-size: cover;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        place-content: stretch flex-start;
-        height: 758px;
-        width: 695px;
-        flex-grow: 0;
+        background-position: center center;
+        max-height: 200vh;
+    }
+
+    @media only screen and (max-width: 480px){
+        .picture {
+            display: none;
+        }
 
     }
 }
