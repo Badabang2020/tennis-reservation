@@ -76,6 +76,11 @@ Bash_Language.en = {
 
     cEdit: "Edit",
     cDelete: "Delete",
+
+    confirm: "Confirm",
+    yes : "Yes",
+    no: "No",
+    confirm_delete :"Would you like to delete the item?",
     
     //Membersettings
     pProfilSettings: 'Profil Settings',
@@ -152,6 +157,11 @@ Bash_Language.de = {
 
     cEdit: "Bearbeiten",
     cDelete: "Entfernen",
+    confirm: "Bestätigen",
+    yes : "Ja",
+    no: "Nein",
+    confirm_delete :"Wollen Sie wirklich löschen?",
+
 
     //Membersettings
     pProfilSettings: 'Profil Einstellung',

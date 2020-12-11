@@ -1,13 +1,13 @@
 <?php
-  $servername = "db1552.mydbserver.com";
-  $username = "p452177d1";
-  $password = "oa6O8g,6movs";
-  $dbname = "usr_p452177_4";
+//   $servername = "db1552.mydbserver.com";
+//   $username = "p452177d1";
+//   $password = "oa6O8g,6movs";
+//   $dbname = "usr_p452177_4";
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "usr_p452177_4";
+$servername = "localhost";
+$username = "root";
+$password = "12345678";
+$dbname = "usr_p452177_4";
 
 
 $GLOBALS['connection'] = new mysqli($servername, $username, $password, $dbname);

@@ -15,7 +15,9 @@
     <label for="clubadmin__maxreservations"><%>maxReservations<%></label>
     <input type="text" name = "club-max-reservations" id="clubadmin__maxreservations">
 
+  </form>
 
+  
     <h2><%>cYourMembers<%></h2>
     <table class="blueTable">
       <thead>
@@ -31,7 +33,7 @@
         
       </tbody>
     </table>
-    <button id="clubadmin__addmember"><%>cAddMember<%></button>
+    <button type="button" id="clubadmin__addmember"><%>cAddMember<%></button>
     
 
     <h2><%>cYourCourts<%></h2>
@@ -52,5 +54,5 @@
     <button id="clubadmin__close"><%>cClose<%></button>
     
    
-  </form>
+
 </div>
