@@ -50,16 +50,21 @@ export default class SettingsView extends Bash_Route {
         
                 window.bash.api.login(email, currentPassword, function(mysqlResult) {
                     if(mysqlResult !== "noMatch") {
-                        if (newPassword === newPassword2) {
-                            window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
-                                $("#pCurrentPassword").val("");
-                                $("#pNewPassword").val("");
-                                $("#pNewPassword2").val("");
-                                console.log(mysqlResult);
-                            });
+                        if (newPassword.length > 4) {
+                            if (newPassword === newPassword2) {
+                                window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
+                                    $("#pCurrentPassword").val("");
+                                    $("#pNewPassword").val("");
+                                    $("#pNewPassword2").val("");
+                                    console.log(mysqlResult);
+                                });
+                            }
+                            else {
+                                alert('new Pasword are not the same');
+                            }
                         }
                         else {
-                            alert('new Pasword are not the same');
+                            alert('New Password is shorter than 4 characters');
                         }
                     }
                     else {
@@ -67,7 +72,6 @@ export default class SettingsView extends Bash_Route {
                     }
                 });
             });
-
 
             // delete user
             $("#pDeleteAccount").unbind("click").on("click", function(){
@@ -80,8 +84,6 @@ export default class SettingsView extends Bash_Route {
         else
             window.location.hash = "/";
     }
-
-
 
 
     initializesValue(firstname, lastname, email, phoneNumber, gender, birthdate, role) {

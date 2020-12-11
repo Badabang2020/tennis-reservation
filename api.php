@@ -4,10 +4,10 @@
   $password = "oa6O8g,6movs";
   $dbname = "usr_p452177_4";
 
-//$servername = "localhost";
-//$username = "root";
-//$password = "";
-//$dbname = "usr_p452177_4";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "usr_p452177_4";
 
 
 $GLOBALS['connection'] = new mysqli($servername, $username, $password, $dbname);
@@ -46,7 +46,7 @@ if (isset($_REQUEST["purpose"])) {
         case "ChangeMemberPassword":
             changeMemberPassword();
             break;
-        case "DeletMember":
+        case "DeleteMember":
             deleteMember();
             break;
         case "GetMember":
@@ -157,17 +157,17 @@ function registerMember()
 
 function editMember()
 {
-    $query = "UPDATE member SET (first_name, last_name, gender, birthday, phonenumber, email, role, clubname) 
-    VALUES ('" . $GLOBALS['data']->first_name . "','" . $GLOBALS['data']->last_name . "','" . $GLOBALS['data']->gender . "','" . $GLOBALS['data']->birthday . "','" . $GLOBALS['data']->phonenumber . "','" . $GLOBALS['data']->email . "','" . $GLOBALS['data']->role . "','" . $GLOBALS['data']->clubname . "') 
-    WHERE membernumber = '" . $GLOBALS['data']->membernumber . "';";
+    $query = "UPDATE member 
+    SET first_name = '" . $GLOBALS['data']->first_name . "', last_name = '" . $GLOBALS['data']->last_name . "', gender = '" . $GLOBALS['data']->gender . "', birthday = '" . $GLOBALS['data']->birthday . "', phonenumber = '" . $GLOBALS['data']->phonenumber . "', email = '" . $GLOBALS['data']->email . "', role = '" . $GLOBALS['data']->role . "', clubname = '" . $GLOBALS['data']->clubname . "' 
+    Where membernumber = '" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Edit successfully :)" : "Could not edit member");
 }
 
 function changeMemberPassword()
 {
-    $query = "UPDATE member SET (password) 
-    VALUES ('" . $GLOBALS['data']->password . "') 
+    $query = "UPDATE member 
+    SET password =  '" . sha1($GLOBALS['data']->password) . "' 
     WHERE membernumber = '" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result ? "Changed Password successfully :)" : "Could not change Member Password");
@@ -175,7 +175,7 @@ function changeMemberPassword()
 
 function deleteMember()
 {
-    $query = "DELETE FROM member WHERE membernumber='" . $GLOBALS['data']->membernumber . "';";
+    $query = "DELETE FROM member WHERE membernumber = '" . $GLOBALS['data']->membernumber . "';";
     $result = $GLOBALS['connection']->query($query);
     die($result);
 }
