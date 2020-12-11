@@ -256,7 +256,7 @@ function addReservation()
 {
     $query = "INSERT INTO reservation (reservedFrom, reservedUntil, date, reservationstype, courtid, membernumber, activ) VALUES ('" . $GLOBALS['data']->reservedFrom . "','" . $GLOBALS['data']->reservedUntil . "','" . $GLOBALS['data']->date . "','" . $GLOBALS['data']->reservationstype . "','" . $GLOBALS['data']->courtid . "','" . $GLOBALS['data']->membernumber . "','" . $GLOBALS['data']->activ . "');";
     $result = $GLOBALS['connection']->query($query);
-    die($result ? json_encode($GLOBALS['connection']->insert_id) : "Could not add court");
+    die($result ? json_encode($GLOBALS['connection']->insert_id) : "Could not add reservation");
 }
 
 function editReservation()

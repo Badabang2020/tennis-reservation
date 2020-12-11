@@ -150,9 +150,15 @@ class Bash_Utils{
 
     dateFormatter(dateUS) {
         let day = dateUS.substring(dateUS.length, dateUS.lastIndexOf('-')+1);
+        if(day.length ==1){
+            day = "0" + day;
+        }
         let month = dateUS.substring(dateUS.lastIndexOf('-'), dateUS.indexOf('-')+1);
+        if(month.length == 1){
+            month = "0" + month;
+        }
         let year = dateUS.substring(0, dateUS.indexOf('-'));
-        return ''+day+'.'+month+'.'+year+'';
+        return ''+year+'.'+month+'.'+day;
     }
 }
 export default Bash_Utils;

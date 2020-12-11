@@ -66,6 +66,12 @@ export default class SettingsView extends Bash_Route {
                         else {
                             alert('New Password is shorter than 4 characters');
                         }
+                        else {
+                            alert('new Pasword are not the same');
+                        }
+                    }
+                    else {
+                        alert('current Password is false');
                     }
                     else {
                         alert('current Password is false');
@@ -84,6 +90,8 @@ export default class SettingsView extends Bash_Route {
         else
             window.location.hash = "/";
     }
+
+
 
 
     initializesValue(firstname, lastname, email, phoneNumber, gender, birthdate, role) {
