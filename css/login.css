@@ -104,5 +104,10 @@
   background: url(images/tennis-img.jpg);
   background-size: cover;
   background-position: center center;
-  max-height: 100vh;
+  max-height: 200vh;
+}
+@media only screen and (max-width: 480px) {
+  #loginSite .picture {
+    display: none;
+  }
 }
