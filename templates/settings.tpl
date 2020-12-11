@@ -30,7 +30,7 @@
     <h3><%>password<%></h3>
     <form class="password">
         <label><%>pCurrentPassword<%></label><br>
-        <input id="pCurrentPassword" type="text" name="currentPassword" required><br>
+        <input id="pCurrentPassword" type="password" name="currentPassword" required><br>
 
         <label><%>pNewPassword<%></label><br>
         <input id="pNewPassword" type="password" name="newPassword" required><br>
