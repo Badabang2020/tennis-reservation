@@ -38,7 +38,7 @@
         <label><%>pReEnterNewPassword<%></label><br>
         <input id="pNewPassword2" type="password" name="re-enterNewPassword" required><br>
 
-        <input type="submit" id="pChangePassword" value="<%>pChangePassword<%>"></input>
+        <input type="submit" id="pChangePassword" name="pChangePassword" value="<%>pChangePassword<%>"></input>
     </form>
 
     <h3><%>pRole<%></h3>

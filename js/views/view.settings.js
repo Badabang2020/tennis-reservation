@@ -50,13 +50,21 @@ export default class SettingsView extends Bash_Route {
         
                 window.bash.api.login(email, currentPassword, function(mysqlResult) {
                     if(mysqlResult !== "noMatch") {
-                        if (newPassword === newPassword2) {
-                            window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
-                                $("#pCurrentPassword").val("");
-                                $("#pNewPassword").val("");
-                                $("#pNewPassword2").val("");
-                                console.log(mysqlResult);
-                            });
+                        if (newPassword.length > 4) {
+                            if (newPassword === newPassword2) {
+                                window.bash.api.changeMemberPassword(membernumber, newPassword, function(mysqlResult){
+                                    $("#pCurrentPassword").val("");
+                                    $("#pNewPassword").val("");
+                                    $("#pNewPassword2").val("");
+                                    console.log(mysqlResult);
+                                });
+                            }
+                            else {
+                                alert('new Pasword are not the same');
+                            }
+                        }
+                        else {
+                            alert('New Password is shorter than 4 characters');
                         }
                         else {
                             alert('new Pasword are not the same');
@@ -65,9 +73,11 @@ export default class SettingsView extends Bash_Route {
                     else {
                         alert('current Password is false');
                     }
+                    else {
+                        alert('current Password is false');
+                    }
                 });
             });
-
 
             // delete user
             $("#pDeleteAccount").unbind("click").on("click", function(){
