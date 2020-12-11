@@ -52,6 +52,7 @@ Bash_Language.en = {
 
     //Courts
     court: "Court",
+    surface: "Surface",
 
     //Clubsettings
     cAdministration: "Administration",
@@ -133,6 +134,7 @@ Bash_Language.de = {
 
     //Courts
     court : "Platz",
+    surface: "Oberfläche",
 
     //Clubsettings
     cAdministration: "Administration",

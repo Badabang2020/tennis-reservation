@@ -53,6 +53,51 @@
   </br>
     <button id="clubadmin__close"><%>cClose<%></button>
     
-   
+   <div id="editor_member_overlay">
+      <form>
+        <label><%>firstName<%></label><br>
+        <input id="pFirstname" type="text" name="firstname" required><br>
+
+        <label><%>lastName<%></label><br>
+        <input id="pLastname" type="text" name="lastname" required><br>
+
+        <label><%>email<%></label><br>
+        <input id="pEmail" type="email" name="email" required><br>
+
+        <label><%>pPhoneNumber<%></label><br>
+        <input id="pPhoneNumber" type="text" name="phoneNumber"><br>
+
+        <label><%>pGender<%></label><br>
+        <select id="pGender">
+            <option value="f"><%>pf<%></option>
+            <option value="m"><%>pm<%></option>
+        </select><br>
+
+        <label><%>pBirthdate<%></label><br>
+        <input id="pBirthday" type="date" name="birthdate" required><br>
+        
+        <label><%>pRole<%></label><br>
+        <select id="pRole">
+            <option value="admin"><%>pAdmin<%></option>
+            <option value="member"><%>pMember<%></option>
+        </select><br>
+        
+        <button type="submit" id="pSaveChanges" value=""><%>pSaveChanges<%></button>
+        <button type="button "id="pCancel" value=""><%>cancel<%></button>
+      </form>
+   </div>
+
+    <div id="editor_court_overlay">
+      <form>
+          <label><%>court<%></label><br>
+          <input id="court" type="text" name="court" required><br>
+
+          <label><%>surface<%></label><br>
+          <input id="surface" type="text" name="surface" required><br>
+
+          <button type="submit" id="pSaveChanges" value=""><%>pSaveChanges<%></button>
+          <button type="button "id="pCancel" value=""><%>cancel<%></button>
+      </form>
+    </div>
 
 </div>
