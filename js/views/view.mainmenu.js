@@ -34,53 +34,77 @@ export default class MainMenuView extends Bash_Route {
             if (clubResult) {
                 let club = JSON.parse(clubResult);
                 var date = new Date();
-                for (let i = 0; i < club.daysBefore; i++) {
-                    self.renderTable(date, club);
-                    date.setDate(date.getDate() + 1);
-                }
-                self.renderReservations();
+                let today = 0;
+                self.renderTable(date, club, self, today);
             }
         });
     }
 
-    renderTable(date, club) {
-        date = date.toLocaleDateString();
+    renderTable(date, club, self, today) {
+        let nextDate = new Date(date);
+        let dateString = new Date(date).toLocaleDateString();
         window.bash.api.getCourtsOfClub(club.clubname, function (courtResult) {
             if (courtResult) {
                 let courtArr = JSON.parse(courtResult);
                 let startHour = Number(club.openFrom);
                 let endHour = Number(club.openUntil);
 
-                let table = "<table data-date='" + date + "'><tr>";
+                let table = "<table data-date='" + nextDate.getFullYear() + '-' + (nextDate.getMonth()+1) + '-' + nextDate.getDate() + "'><tr>";
                 // Creating tableheader (times)
-                table += "<th>" + date + "</th>";
+                table += "<th>" + dateString + "</th>";
                 for (let hour = startHour; hour <= endHour; hour++)
                     table += "<th>" + hour + "</th>";
                 // Creating tabledata
                 table += "</tr>";
                 for (const [key, value] of Object.entries(courtArr)) {
-                    table += "<tr class='court_" + value.courtid + "'><td>" + value.name + "</td>";
+                    table += "<tr class='court_" + value.courtid + "' data-id='"+ value.courtid +"'><td>" + value.name + "</td>";
                     for (let hour = startHour; hour <= endHour; hour++)
-                        table += "<td class='hour_"+ hour +"'>" + "free" + "</td>";
+                        table += "<td class='hour_"+ hour +"' data-time='"+ ( hour < 10 ? '0' : '') + hour +"'>" + "free" + "</td>";
                 }
                 table += "</tr></table>";
                 $(".maincontent").append(table);
             }
+            if (today > club.daysBefore) {
+                self.renderReservations(self);
+                return;
+            } else
+                today++;
+                nextDate = nextDate.setDate(nextDate.getDate() + 1);
+                self.renderTable(nextDate, club, self, today);
         });
     }
 
-    renderReservations(){
+    renderReservations(self){
         window.bash.api.getReservationOfClub(JSON.parse(window.bash.utils.getCookie("user")).clubname, function(result){
             console.log(JSON.parse(result));
             let reservations = JSON.parse(result);
             for (const [key, value] of Object.entries(reservations)){
-                let EUdate = window.bash.utils.dateFormatter(value.date);
                 console.log(value);
                 for (let i = Number.parseInt(value.reservedFrom); i < Number.parseInt(value.reservedUntil); i++){
-                    $('table[data-date="'+EUdate+'"] .court_'+value.courtid+' .hour_'+i).addClass('reserved');
-                    console.log('table[data-date="'+EUdate+'] .court_' + value.courtid+' .hour_' + i);
+                    let date = new Date(value.date);
+                    $('table[data-date="'+date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()+'"] .court_'+value.courtid+' .hour_'+i).addClass('reserved').html('reserved');
                 }
             }
+            self.setClickEvents();
+        });
+    }
+
+    setClickEvents() {
+        $('td:not(".reserved")').unbind().on('click', function () {
+            let self = this;
+            window.bash.api.addReservation(
+              $(this).data('time') + ':00:00',
+              (parseInt($(this).data('time'))+1)+ ':00:00',
+              $(this).closest('table').data('date'),
+              'reserved',
+              $(this).closest('tr').data('id'),
+              JSON.parse(window.bash.utils.getCookie('user')).membernumber,
+              true,
+              function (response) {
+                if (response !== "Could not add reservation") {
+                    $(self).addClass('reserved').html('reserved');
+                }
+            });
         });
     }
 }

@@ -127,7 +127,7 @@ class Bash_Utils{
             month = "0" + month;
         }
         let year = dateUS.substring(0, dateUS.indexOf('-'));
-        return ''+day+'.'+month+'.'+year+'';
+        return ''+year+'.'+month+'.'+day;
     }
 }
 export default Bash_Utils;
