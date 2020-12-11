@@ -57,7 +57,7 @@ export default class MainMenuView extends Bash_Route {
                 // Creating tabledata
                 table += "</tr>";
                 for (const [key, value] of Object.entries(courtArr)) {
-                    table += "<tr class='court_" + value.courtid + "' data-id='"+ value.courtid +"'><td>" + value.name + "</td>";
+                    table += "<tr class='court_" + value.courtid + "' data-id='"+ value.courtid +"'><td class='court'>" + value.name + "</td>";
                     for (let hour = startHour; hour <= endHour; hour++)
                         table += "<td class='hour_"+ hour +"' data-time='"+ ( hour < 10 ? '0' : '') + hour +"'>" + "free" + "</td>";
                 }
@@ -90,7 +90,7 @@ export default class MainMenuView extends Bash_Route {
     }
 
     setClickEvents() {
-        $('td:not(".reserved")').unbind().on('click', function () {
+        $('td:not(".reserved"):not(".court")').unbind().on('click', function () {
             let self = this;
             window.bash.api.addReservation(
               $(this).data('time') + ':00:00',

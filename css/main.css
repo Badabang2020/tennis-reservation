@@ -25,3 +25,9 @@
 #mainmenu table td {
   border: 1px solid #c7c7c7;
 }
+#mainmenu table td:not(.court) {
+  background-color: #003b0769;
+}
+#mainmenu table td.reserved:not(.court) {
+  background-color: rgba(125, 9, 0, 0.71);
+}
