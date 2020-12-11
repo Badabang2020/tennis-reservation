@@ -60,3 +60,52 @@ header{
         .show {display: block;}
     }
 }
+
+
+#confirm-overlay{
+    display:none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color : rgba(0,0,0,0.8);
+    top : 0;
+    left : 0;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+
+    &.active{
+        display : flex;
+    }
+
+
+
+}
+
+#confirm-flex{
+    width : 80vw;
+    text-align : center;
+    left: 10vw;
+    background-color: wheat;
+    padding: 40px;
+    box-sizing: border-box;
+    padding-top: 0;
+    
+    
+    .headline{
+        text-transform: uppercase;
+        text-align : left;
+    }
+    .text-question{
+        margin: 40px 0;
+    }
+    button{
+        border: 0;
+        padding: 5px 15px;
+        background-color: white;
+    }
+    
+    
+
+}
+

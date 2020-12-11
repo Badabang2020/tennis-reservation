@@ -48,7 +48,13 @@ export default class ClubSettingsView extends Bash_Route {
                     e.preventDefault();
                     console.log($(this).closest("tr").data("member-number"));
                     console.log($(this).parent().parent());
-                    console.log("ACTION: Delete member");
+                    window.bash.utils.confirm(window.bash.t("confirm_delete"),function(answer){
+                        if (answer){
+                            console.log("Action: delete member");
+                        }else{
+                            console.log("Action: delete aborted");
+                        }
+                    })
                 });
 
                 $(".clubadmin__editmember").unbind("click").on("click", function(e){
@@ -113,4 +119,8 @@ export default class ClubSettingsView extends Bash_Route {
 
         });
     }
+
+    // delete court
+
+    editCourt
 }

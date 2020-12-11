@@ -51,6 +51,37 @@ class Bash_Utils{
         return null;
     };
 
+
+    confirm(question, callback){
+        $("#confirm-overlay").remove();
+        let confElement = `<div id="confirm-overlay" class="active">
+            <div id="confirm-flex">
+                <div class="headline">`+
+                    window.bash.t("confirm")
+                +`</div>
+                <div class = "text-question">`+
+                    question
+                +`</div>
+                <div class ="button-box">
+                    <button id="confirm-yes">`+window.bash.t("yes")+`</button>
+                    <button id="confirm-no">`+window.bash.t("no")+`</button>
+                </div>
+            </div>
+        </div>
+        `;
+        $("body").append($(confElement)).css("overflow","hidden");
+        $("#confirm-yes").unbind().on("click",function(){
+            $("#confirm-overlay").removeClass("active");
+            $("body").css("overflow","auto");
+            callback(true);
+        });
+        $("#confirm-no").unbind().on("click",function(){
+            $("#confirm-overlay").removeClass("active");
+            $("body").css("overflow","auto");
+            callback(false);
+        });
+    }
+
     deleteCookie(name){
         window.bash.utils.setCookie(name,"",-1);
     };
