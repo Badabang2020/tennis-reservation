@@ -375,3 +375,15 @@ header nav .show {
 #registerCSS .password {
   border-bottom: 1px solid gray;
 }
+#editor_member_overlay {
+  display: none;
+}
+#editor_member_overlay.active {
+  display: flex;
+}
+#editor_court_overlay {
+  display: none;
+}
+#editor_court_overlay.active {
+  display: flex;
+}

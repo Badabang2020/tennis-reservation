@@ -14,12 +14,23 @@ export default class ClubSettingsView extends Bash_Route {
         this.initCourts();
     }
 
-
     initSettings(){
+        let self = this;
         console.log("Init settings");
+        $("#clubadmin__addmember").unbind("click").on("click", function(e){
+            e.preventDefault();
+            self.openMemberEditor();
+            console.log("Action: Add member");
+        });
+        $("#clubadmin__addcourt").unbind("click").on("click", function(e){
+            e.preventDefault();
+            self.openCourtEditor();
+            console.log("Action: Add court");
+        });
     }
     
     initMembers(){
+        let self = this;
         window.bash.model.getMembersOfClub(function(members){
             
             let jsonMembers = JSON.parse(members);
@@ -27,11 +38,6 @@ export default class ClubSettingsView extends Bash_Route {
             // console.log(jsonMembers);
             for(const member of jsonMembers){
                 console.log(member);
-
-                
-                
-                    
-
 
                 $("#club-settings-members-table-body").append("<tr data-member-number='"+member.membernumber+"'>"+
                 "<td>"+member.first_name+" "+member.last_name+"</td>"+
@@ -56,18 +62,13 @@ export default class ClubSettingsView extends Bash_Route {
                         }
                     })
                 });
-
                 $(".clubadmin__editmember").unbind("click").on("click", function(e){
                     e.preventDefault();
+                    self.openMemberEditor();
                     console.log($(this).closest("tr").data("member-number"));
                     console.log($(this).parent().parent());
                     console.log("ACTION: Edit member");
-                    
                 });
-
-
-
-
             }
         })
     }
@@ -81,7 +82,6 @@ export default class ClubSettingsView extends Bash_Route {
             for(const court of jsonCourts){
                 console.log(court);
 
-
                 $("#club-settings-clourts-table-body").append(
                     "<tr data-courtid='"+court.courtid+"'>"+
                         "<td>"+ court.name + "</td>"+
@@ -89,38 +89,33 @@ export default class ClubSettingsView extends Bash_Route {
                         "<td>"+"<button class='clubadmin__editcourt'>"+window.bash.t("cEdit")+"</button>"+"</td>"+
                         "<td>"+"<button class='clubadmin__deletecourt'>"+window.bash.t("cDelete")+"</button>"+"</td>"+
                     "</tr>"
-
                 );
-
-
             }
 
             $(".clubadmin__editcourt").unbind("click").on("click", function(e){
                 e.preventDefault();
-                console.log("ACTION:Edit  court"+ $(this).closest("tr").data("courtid") );
+                console.log("ACTION:Edit  court"+ $(this).closest("tr").data("courtid"));
             });
 
             $(".clubadmin__deletecourt").unbind("click").on("click", function(e){
                 e.preventDefault();
+                window.bash.utils.confirm(window.bash.t("confirm_delete"),function(answer){
+                    if (answer){
+                        console.log("Action: delete court");
+                    }else{
+                        console.log("Action: delete court aborted");
+                    }
+                })
                 console.log("ACTION: Delete court"+ $(this).closest("tr").data("courtid") );
             });
-
-
-            // <tr>
-            // <td>cell1_1</td>
-            // <td>cell2_1</td>
-            // <td>cell3_1</td>
-            // <td>
-            // <button id="clubadmin__addcourt"><%>cEdit<%></button>
-            // <button id="clubadmin__deletecourt"><%>cDelete<%></button>
-            // </td>
-            // </tr>
-
-
         });
     }
 
-    // delete court
+    openMemberEditor(){
+        $("#editor_member_overlay").addClass("active");
+    }
 
-    editCourt
+    openCourtEditor() {
+        $("#editor_court_overlay").addClass("active");
+    }
 }

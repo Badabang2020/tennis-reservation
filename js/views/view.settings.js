@@ -58,16 +58,13 @@ export default class SettingsView extends Bash_Route {
                                     $("#pNewPassword2").val("");
                                     console.log(mysqlResult);
                                 });
-                            }
-                            else {
+                            } else {
                                 alert('new Pasword are not the same');
                             }
-                        }
-                        else {
+                        } else {
                             alert('New Password is shorter than 4 characters');
                         }
-                    }
-                    else {
+                    } else {
                         alert('current Password is false');
                     }
                 });
